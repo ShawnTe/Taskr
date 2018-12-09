@@ -1,0 +1,16 @@
+<h1>Upcoming</h1>
+<div class="upcoming-list">
+    <% if @tasks.count >= 4 %>
+      <ul>
+          <% @tasks.each do |task| %>
+            <li>
+              <%= task.title %> <br />
+              <%= task.due %>
+              fa-icon for edit | fa-icon for delete
+            </li>
+          <% end %>
+      </ul>
+    <% else %>
+      Upcoming tasks will appear here. <%= link_to "Add a task here!", new_task_path %>
+    <% end %>
+</div>
