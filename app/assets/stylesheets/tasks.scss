@@ -1,0 +1,15 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+label {
+  display: block;
+  padding-top: 5vh;
+}
+
+input {
+  width: 80%;
+}
+input[type=submit] {
+  display: block;
+  margin-top: 5vh;
+}
