@@ -1,6 +1,7 @@
 <h1><%= @task.title %></h1>
 <div>
-  Next up: <%= @task.due %>
+  Next up: <%= @task.due.strftime("%B %d, %Y") %>
+
   (every <%= @task.frequency_number %> <%= @task.frequency_unit %>)
 </div>
 
