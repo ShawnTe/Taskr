@@ -4,11 +4,10 @@ class TasksController < ApplicationController
   end
 
   def create
-    user = User.new({username: "sample-user"})
+    user = User.find(1)
 
     @task = user.tasks.build(task_params)
     if @task.save
-      p "task created successfully"
       redirect_to @task
     else
       render :new

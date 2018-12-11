@@ -1,1 +1,33 @@
-<%= @task.title %>
+<h1><%= @task.title %></h1>
+<div>
+  Next up: <%= @task.due %>
+  (every <%= @task.frequency_number %> <%= @task.frequency_unit %>)
+</div>
+
+<div>
+  <h2>Last done:</h2>
+  <ul>
+    <li>June 2018</li>
+    <li>Dec 2017</li>
+    <li>June 2017</li>
+  </ul>
+</div>
+
+<div>
+  <h2>To Do...</h2>
+  <ul>
+    <li>
+      < if task.details.supplies >
+      Get supplies
+    </li>
+    <li>
+      < if task.details.contact >
+      Make appointment
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Notes</h2>
+  <%= @task.notes %>
+</div>
