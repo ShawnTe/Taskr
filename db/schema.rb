@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_200913) do
+ActiveRecord::Schema.define(version: 2018_12_11_050226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "company"
+    t.string "name"
+    t.string "url"
+    t.string "work_phone"
+    t.string "mobile_phone"
+    t.text "notes"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "details", force: :cascade do |t|
+    t.string "todo_type"
+    t.bigint "todo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "task_id"
+    t.index ["task_id"], name: "index_details_on_task_id"
+    t.index ["todo_type", "todo_id"], name: "index_details_on_todo_type_and_todo_id"
+  end
+
+  create_table "supplies", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.integer "quantity"
+    t.string "brand"
+    t.string "model"
+    t.string "source"
+    t.string "source_link"
+    t.string "how_to_link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.string "title", null: false
@@ -33,5 +68,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_200913) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "details", "tasks"
   add_foreign_key "tasks", "users"
 end
