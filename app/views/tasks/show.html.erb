@@ -17,14 +17,14 @@
 <div>
   <h2>To Do...</h2>
   <ul>
-    <li>
-      < if task.details.supplies >
-      Get supplies
-    </li>
-    <li>
-      < if task.details.contact >
-      Make appointment
-    </li>
+      <% @task.details.each do |task| %>
+        <% if task.todo.instance_of? Supply %>
+          <li>Get supplies (<%= task.todo.name %>) </li>
+        <% else %>
+          <li>Make appointment: (<%= task.todo.company || task.todo.name %>) </li>
+        <% end %>
+
+    <% end %>
   </ul>
 </div>
 
