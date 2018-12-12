@@ -2,9 +2,9 @@
 <div>
   Next up: <%= @task.due.strftime("%B %d, %Y") %>
 
-  (every <%= @task.frequency_number %> <%= @task.frequency_unit %>)
+  (every <%= @task.frequency_number %> <%= @task.frequency_unit.singularize %>)
 </div>
-
+<%= button_to "Something" %>
 <div>
   <h2>Last done:</h2>
   <ul>
@@ -17,11 +17,11 @@
 <div>
   <h2>To Do...</h2>
   <ul>
-      <% @task.details.each do |task| %>
-        <% if task.todo.instance_of? Supply %>
-          <li>Get supplies (<%= task.todo.name %>) </li>
+      <% @task.details.each do |detail| %>
+        <% if detail.todo.instance_of? Supply %>
+          <li>Get supplies (<%= detail.todo.name %>) </li>
         <% else %>
-          <li>Make appointment: (<%= task.todo.company || task.todo.name %>) </li>
+          <li>Make appointment: (<%= link_to detail.todo.company, detail_path(detail.id) || detail.todo.name %>) </li>
         <% end %>
 
     <% end %>
