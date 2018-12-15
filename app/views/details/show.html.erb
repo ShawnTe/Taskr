@@ -3,6 +3,6 @@
 <%= @detail.todo.name %><br />
 <%= link_to @detail.todo.url, "http://Google.com", :target => "_blank" %><br />
 <%= @detail.todo.email %><br />
-<%= @detail.todo.work_phone %><br />
-<%= @detail.todo.mobile_phone %><br />
+<%= link_to @detail.todo.work_phone, "tel:#{@detail.todo.work_phone}" %><br />
+<%= link_to @detail.todo.mobile_phone, "tel:#{@detail.todo.mobile_phone}" %><br />
 <%= @detail.todo.notes %><br />
