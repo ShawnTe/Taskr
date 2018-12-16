@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_050226) do
+ActiveRecord::Schema.define(version: 2018_12_16_203451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contacts", force: :cascade do |t|
+  create_table "contact_details", force: :cascade do |t|
     t.string "company"
     t.string "name"
     t.string "url"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_12_11_050226) do
     t.index ["todo_type", "todo_id"], name: "index_details_on_todo_type_and_todo_id"
   end
 
-  create_table "supplies", force: :cascade do |t|
+  create_table "supply_details", force: :cascade do |t|
     t.string "name"
     t.string "size"
     t.integer "quantity"

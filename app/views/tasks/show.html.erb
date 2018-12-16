@@ -18,7 +18,7 @@
   <h2>To Do...</h2>
   <ul>
       <% @task.details.each do |detail| %>
-        <% if detail.todo.instance_of? Supply %>
+        <% if detail.todo.instance_of? SupplyDetail %>
           <li>Get supplies (<%= detail.todo.name %>) </li>
         <% else %>
           <li>Make appointment: (<%= link_to detail.todo.company, detail_path(detail.id) || detail.todo.name %>) </li>
