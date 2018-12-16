@@ -1,0 +1,12 @@
+<h1>Add Todo details</h1>
+
+Get Supply.
+Add service company/person.
+
+<%= form_for @detail do |form| %>
+  <%= form.fields_for :todo do |todo_form| %>
+    <%= hidden_field_tag 'task_id', @task.id %>
+    <%= todo_form.text_field :name, placeholder: "name" %>
+  <% end %>
+  <%= form.submit "Add todo details" %>
+<% end %>

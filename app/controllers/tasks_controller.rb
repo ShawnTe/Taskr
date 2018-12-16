@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    user = User.find(1)
+    user = User.last
 
     @task = user.tasks.build(task_params)
     if @task.save
@@ -15,7 +15,11 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.last
+    @task = Task.find(params[:id])
+    p "****************** in Task Controller @task: "
+    p "******************"
+    p @task
+
   end
 
   def edit
