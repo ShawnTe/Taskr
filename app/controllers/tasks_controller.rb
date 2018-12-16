@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    user = User.find(1)
+    user = User.find([params[:id]])
 
     @task = user.tasks.build(task_params)
     if @task.save
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.last
+    @task = Task.first
   end
 
   def edit
