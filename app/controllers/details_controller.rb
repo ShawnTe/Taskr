@@ -17,9 +17,14 @@ class DetailsController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:task][:task_id])
     @detail = Detail.find(params[:id])
-    @detail.todo
+    # @detail.todo
     render
+  end
+
+  def update
+
   end
 
   private

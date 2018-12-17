@@ -6,7 +6,7 @@
 </div>
 <%= link_to "Link to add details", new_detail_path(:task => {:task_id => @task.id}) %>
 <div>
-  <h2>Last done:</h2>
+  <h2>Last done (currently static):</h2>
   <ul>
     <li>June 2018</li>
     <li>Dec 2017</li>
@@ -18,7 +18,7 @@
   <h2>To Do...</h2>
   <ul>
       <% @task.details.each do |detail| %>
-        <% if detail.todo.instance_of? Supply %>
+        <% if detail.todo.instance_of? SupplyDetail %>
           <li>Get supplies (<%= detail.todo.name %>) </li>
         <% else %>
           <li>Make appointment: (<%= link_to detail.todo.company, detail_path(detail.id) || detail.todo.name %>) </li>
