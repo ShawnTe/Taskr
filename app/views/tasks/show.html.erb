@@ -1,17 +1,19 @@
 <h1><%= @task.title %></h1>
 <div>
-  Next up: <%= @task.due.strftime("%B %d, %Y") %>
+  Next up: <%= @task.first_due_date.strftime("%B %d, %Y") %>
 
   (every <%= @task.frequency_number %> <%= @task.frequency_unit.singularize %>)
 </div>
 <%= link_to "Link to add details", new_detail_path(:task => {:task_id => @task.id}) %>
+
+
 <div>
-  <h2>Last done (currently static):</h2>
-  <ul>
-    <li>June 2018</li>
-    <li>Dec 2017</li>
-    <li>June 2017</li>
-  </ul>
+  <% if @task.last_date_done %>
+    <h2>Last done:</h2>
+    <ul>
+      <li><%= @task.last_date_done.strftime("%B %Y") %></li>
+    </ul>
+  <% end %>
 </div>
 
 <div>

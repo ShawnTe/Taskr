@@ -6,7 +6,7 @@
           <% @tasks.each do |task| %>
             <li>
               <%= link_to task.title, task_path(task.id) %> <br />
-              <%= task.due %>
+              <%= task.first_due_date %>
               fa-icon for edit | fa-icon for delete
             </li>
           <% end %>
