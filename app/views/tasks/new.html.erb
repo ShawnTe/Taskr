@@ -3,8 +3,8 @@
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.title || "Name of task" %>
 
-  <%= f.label :due %>
-  <%= f.date_field :due, placeholder: @task.due || "Click arrow for calendar" %>
+  <%= f.label :first_due_date %>
+  <%= f.date_field :first_due_date, placeholder: @task.first_due_date || "Click arrow for calendar" %>
 
   <%= f.label :notes %>
   <%= f.text_area :notes, size: "60x6", placeholder: @task.notes || "These notes are general to the task. For ex. If task is \"Change fridge water filter\", you could put fridge model here. Specific details about the filter will get entered in the next step." %>

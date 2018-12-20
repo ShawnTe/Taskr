@@ -7,9 +7,7 @@ class TasksController < ApplicationController
     user = User.last
 
     @task = user.tasks.build(task_params)
-    if @task.save
-      # temporary placement for trial run
-      TwilioTextMessenger.new("From tasks controller").send_message
+  if @task.save
       redirect_to @task
     else
       render :new
