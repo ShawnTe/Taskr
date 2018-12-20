@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @tasks = Task.all
+    @tasks = Task.order('due DESC')
   end
 end
