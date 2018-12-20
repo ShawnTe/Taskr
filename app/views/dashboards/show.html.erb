@@ -1,7 +1,7 @@
 <h1>Upcoming</h1>
 <%= link_to "Add a task", new_task_path %>
 <div class="upcoming-list">
-    <% if @tasks.count >= 4 %>
+    <% if @tasks.count >= 1 %>
       <ul>
           <% @tasks.each do |task| %>
             <li>
