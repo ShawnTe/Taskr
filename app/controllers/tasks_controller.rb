@@ -7,9 +7,7 @@ class TasksController < ApplicationController
     user = User.last
 
     @task = user.tasks.build(task_params)
-    if @task.save
-      # temporary placement for trial run
-      TwilioTextMessenger.new("From tasks controller").send_message
+  if @task.save
       redirect_to @task
     else
       render :new
@@ -18,9 +16,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    p "****************** in Task Controller @task: "
-    p "******************"
-    p @task
+    helpers.check_due_date(@task)
   end
 
   def edit
