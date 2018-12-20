@@ -1,5 +1,5 @@
 <h1>Details to do the thing</h1>
-<%= link_to '<i class="demo-icon icon-edit"></i>'.html_safe, edit_detail_path, class: 'large-icon right' %>
+<%= link_to '<i class="demo-icon icon-edit"></i>'.html_safe, edit_detail_path("task" => { :task_id => @detail.task_id }), class: 'large-icon right' %>
 <br />
 
 <div class="the-icons"><i class="demo-icon icon-building"></i>

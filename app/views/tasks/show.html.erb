@@ -4,7 +4,7 @@
 
   (every <%= @task.frequency_number %> <%= @task.frequency_unit.singularize %>)
 </div>
-<%= button_to "Something" %>
+<%= link_to "Link to add details", new_detail_path(:task => {:task_id => @task.id}) %>
 <div>
   <% if @task.last_date_done %>
     <h2>Last done:</h2>

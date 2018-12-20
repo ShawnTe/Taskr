@@ -15,7 +15,10 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.first
+    @task = Task.find(params[:id])
+    p "****************** in Task Controller @task: "
+    p "******************"
+    p @task
   end
 
   def edit
