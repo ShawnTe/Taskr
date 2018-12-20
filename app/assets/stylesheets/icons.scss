@@ -3,10 +3,18 @@
   line-height: 32px;
 }
 .right {
-  text-align: right;
-  padding-left: 70%;
+  float: right;
 }
 .large-icon {
   font-size: 32px;
   line-height: 32px;
+}
+
+.nav-icon {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 32px;
+  line-height: 32px;
+  width: 44px;
+  background-color: rgba(98, 101, 103, .2);
 }

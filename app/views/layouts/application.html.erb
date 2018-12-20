@@ -4,14 +4,16 @@
     <title>Taskr</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div id="container">
-      <%= link_to '<i class="demo-icon icon-menu"></i>'.html_safe, root_path, class: 'large-icon right' %>
+      <div class="sticky">
+        <%= link_to '<i class="demo-icon icon-menu"></i>'.html_safe, root_path, class: 'nav-icon right' %>
+      </div>
       <%= yield %>
     </div>
   </body>

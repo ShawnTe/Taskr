@@ -4,10 +4,15 @@ body {
 }
 
 #container {
-  width: 400px;
   background-color: cornsilk;
   /*border-width: 3;*/
   border-style: outset;
-  padding: 10px;
+  padding: 3%;
   margin: auto;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
