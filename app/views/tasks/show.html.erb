@@ -1,4 +1,15 @@
 <h1><%= @task.title %></h1>
+<%= @task.date_completed %> is the date completed
+<% if @task.date_completed.nil? %>
+
+
+ <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
+
+
+<% else %>
+  The thing is done
+<% end %>
+
 <div>
   Next up: <%= @task.first_due_date.strftime("%B %d, %Y") %>
 
