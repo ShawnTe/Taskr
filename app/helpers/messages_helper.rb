@@ -3,11 +3,12 @@ module MessagesHelper
 
 
   def build_message(task)
-    @task = task
-
-    message = "Time to #{task.title}.\n"
-    message += "Last time done was:\n#{task.last_date_done.strftime("%B %Y")}\n"
-    message += "Goto task: http://17b3de65.ngrok.io/tasks/3\n"
+    host = "http://5f843c0b.ngrok.io/"
+    task_url = host + "/tasks/#{task.id}"
+    p task_url
+    message = "Time to #{task.title}.\n\n"
+    message += "Last time done was:\n#{task.last_date_done.strftime("%B %Y")}\n\n"
+    message += "Goto todos: " + task_url
     message
 # Add list of details
   end
@@ -17,7 +18,8 @@ module MessagesHelper
 
     if today >= task.first_due_date - 14
       p "Fake text sent. *****************"
-      # TwilioTextMessenger.new(build_message(@task)).send_message
+      message = build_message(task)
+      TwilioTextMessenger.new(message).send_message
     else
       p "first_due_date is greater than two weeks away. No text sent."
     end
