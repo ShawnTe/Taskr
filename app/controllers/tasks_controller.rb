@@ -26,6 +26,7 @@ class TasksController < ApplicationController
     p task_params
     @task = Task.find(params[:id])
     @task.update(task_params)
+    @task.update(last_date_done: Time.new)
     redirect_to root_path
   end
 

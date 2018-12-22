@@ -1,22 +1,16 @@
 <h1><%= @task.title %></h1>
-<%= @task.date_completed %> is the date completed
+<div class="the-icons"><i class="demo-icon icon-edit"></i>&nbsp;&nbsp;<i class="demo-icon icon-trash-empty"></i></div>
+
 <% if @task.date_completed.nil? %>
-
-
  <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
-
-
 <% else %>
-  The thing is done
+  <h2 class="done-task">The Task is Done</h2>
 <% end %>
-
+<br />
 <div>
-  Next up: <%= @task.first_due_date.strftime("%B %d, %Y") %>
-
-  (every <%= @task.frequency_number %> <%= @task.frequency_unit.singularize %>)
+  Next up: <%= @task.first_due_date.strftime("%B %d, %Y") %><br />
+  Frequency: every <%= @task.frequency_number %> <%= @task.frequency_unit %>
 </div>
-<%= link_to "Link to add details", new_detail_path(:task => {:task_id => @task.id}) %>
-
 
 <div>
   <% if @task.last_date_done %>
@@ -29,6 +23,8 @@
 
 <div>
   <h2>To Do...</h2>
+  <%= link_to '<i class="demo-icon icon-plus-squared-alt"></i> (add new service todo)'.html_safe, new_detail_path(:task => {:task_id => @task.id}) %>
+
   <ul>
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
