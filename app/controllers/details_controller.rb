@@ -38,7 +38,7 @@ class DetailsController < ApplicationController
   end
 
   def todo_params
-    params.require(:detail).require(:todo).permit(:name, :task_id)
+    params.require(:detail).require(:todo).permit(:company, :name, :url, :work_phone, :mobile_phone, :notes, :email, :task_id)
   end
 
   def redirect_options_for(detail)

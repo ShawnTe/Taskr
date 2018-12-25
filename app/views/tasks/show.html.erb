@@ -30,7 +30,7 @@
         <% if detail.todo.instance_of? SupplyDetail %>
           <li>Get supplies (<%= detail.todo.name %>) </li>
         <% else %>
-          <li>Make appointment: (<%= link_to detail.todo.company, detail_path(detail.id) || detail.todo.name %>) </li>
+          <li>Make appointment: (<%= link_to (detail.todo.company || detail.todo.name), detail_path(detail.id) %>) </li>
         <% end %>
 
     <% end %>
