@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
   def new
     @task = Task.new
   end
@@ -23,6 +24,11 @@ class TasksController < ApplicationController
   end
 
   def update
+    p task_params
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    @task.update(last_date_done: Time.new)
+    redirect_to root_path
   end
 
   def destroy
@@ -31,6 +37,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :due, :notes, :frequency_unit, :frequency_number)
+    params.require(:task).permit(:title, :first_due_date, :notes, :frequency_unit, :frequency_number, :date_completed)
   end
 end

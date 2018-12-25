@@ -2,18 +2,20 @@
 <%= form_for @task, html: {class: "new-form"} do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.title || "Name of task" %>
+  <br />
+
 
   <%= f.label :first_due_date %>
   <%= f.date_field :first_due_date, placeholder: @task.first_due_date || "Click arrow for calendar" %>
+  <br />
 
-  <%= f.label :notes %>
-  <%= f.text_area :notes, size: "60x6", placeholder: @task.notes || "These notes are general to the task. For ex. If task is \"Change fridge water filter\", you could put fridge model here. Specific details about the filter will get entered in the next step." %>
-
-  <%= f.label :frequency_unit, "Time units" %>
+  Do every:
+  <%= f.label :frequency_number, "Number" %>
+  <%= f.number_field :frequency_number, in: 1.0..31.0, step: 1.0, placeholder: @task.frequency_number || "for ex. 6" %>
+  <br />
+  <%= f.label :frequency_unit, "Frequency" %>
   <%= f.text_field :frequency_unit, placeholder: @task.frequency_unit || "I.e. years / months / weeks / days" %>
   <br />
-  <%= f.label :frequency_number, "Number of units" %>
-  <%= f.number_field :frequency_number, in: 1.0..31.0, step: 1.0, placeholder: @task.frequency_number || "# frequency. For ex 1 (time a year)." %>
   <br />
   <%= f.label :notes %>
   <%= f.text_area :notes, size: "60x6", placeholder: @task.notes || "For notes general to the task.  Add specific details/todos about  task in next step." %>

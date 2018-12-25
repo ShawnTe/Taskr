@@ -137,6 +137,12 @@
       "css": "glass",
       "code": 59403,
       "src": "fontawesome"
+    },
+    {
+      "uid": "2d3be3e856fc1e4ac067590d2ded1b07",
+      "css": "plus-squared-alt",
+      "code": 61846,
+      "src": "fontawesome"
     }
   ]
 }
