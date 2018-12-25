@@ -5,6 +5,6 @@ class Task < ApplicationRecord
   validates :title, :first_due_date, presence: true
 
   def self.incomplete
-    Task.where.not(date_completed: [nil, ""])
+    Task.where(date_completed: [nil, ""])
   end
 end
