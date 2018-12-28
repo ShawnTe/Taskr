@@ -41,11 +41,18 @@ class DetailsController < ApplicationController
   end
 
   def todo_from_params
-    ContactDetail.new(todo_params)
+    case params[:detail][:todo_type]
+    when "ContactDetail" then ContactDetail.new(contact_detail_todo_params)
+    when "SupplyDetail" then SupplyDetail.new(supply_detail_todo_params)
+    end
   end
 
-  def todo_params
+  def contact_detail_todo_params
     params.require(:detail).require(:todo).permit(:company, :name, :url, :work_phone, :mobile_phone, :notes, :email, :task_id)
+  end
+
+  def supply_detail_todo_params
+    params.require(:detail).require(:todo).permit(:name, :size, :quantity, :brand, :model, :source, :source_link, :how_to_link, :images)
   end
 
   def redirect_options_for(detail)

@@ -1,4 +1,5 @@
 <%= form_for @detail do |form| %>
+    <%= form.hidden_field :todo_type, value: ContactDetail %>
   <%= form.fields_for :todo do |todo_form| %>
     <%= hidden_field_tag 'task_id', @task.id %>
 
@@ -24,5 +25,37 @@
     <%= todo_form.text_area :notes, size: "40x6", placeholder: "notes" %></div>
 
   <% end %>
-  <%= form.submit "Add todo details" %>
+  <%= form.submit "Add contact details" %>
+<% end %>
+
+<%= form_for @detail do |form| %>
+    <%= form.hidden_field :todo_type, value: SupplyDetail %>
+  <%= form.fields_for :todo do |todo_form| %>
+    <%= hidden_field_tag 'task_id', @task.id %>
+
+    <div class="the-icons"><i class="demo-icon icon-user"></i>
+    <%= todo_form.text_field :name, placeholder: "name" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-globe"></i>
+    <%= todo_form.text_field :size, placeholder: "size" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-envelope-open-o"></i>
+    <%= todo_form.text_field :brand, placeholder: "brand" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-volume-control-phone"></i>
+    <%= todo_form.text_field :model, placeholder: "model" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-mobile"></i>
+    <%= todo_form.text_field :source, placeholder: "where to get" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-globe"></i>
+    <%= todo_form.text_field :source_link, placeholder: "link to buy" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-globe"></i>
+    <%= todo_form.text_field :how_to_link, placeholder: "link to How To" %></div>
+
+    <%= todo_form.file_field :images %>
+
+  <% end %>
+  <%= form.submit "Add supply details" %>
 <% end %>
