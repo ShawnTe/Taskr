@@ -14,6 +14,7 @@ class DetailsController < ApplicationController
 
   def show
     @detail = Detail.find(params[:id])
+    @task = Task.find(@detail.task_id)
   end
 
   def edit
@@ -24,7 +25,13 @@ class DetailsController < ApplicationController
   end
 
   def update
+  end
 
+  def check_date
+    @detail = Detail.find(7)
+    @task = Task.find(@detail.task_id)
+    helpers.check_due_date(@task)
+    redirect_to @detail
   end
 
   private

@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :tasks, only: [:new, :create, :show, :edit, :update, :destroy]
 
-  resources :details
+  resources :details do
+    get :check_date
+  end
 
   get '*path' => redirect('/')
 end
