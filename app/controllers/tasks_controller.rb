@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    helpers.check_due_date(@task)
+    # helpers.check_due_date(@task)
   end
 
   def edit
