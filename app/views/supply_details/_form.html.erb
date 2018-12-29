@@ -4,7 +4,7 @@
     <%= hidden_field_tag 'task_id', @task.id %>
 
     <div class="the-icons"><i class="demo-icon icon-user"></i>
-    <%= todo_form.text_field :name, placeholder: "name" %></div>
+    <%= todo_form.text_field :name, placeholder: "supply needed" %></div>
 
     <div class="the-icons"><i class="demo-icon icon-user"></i>
     <%= todo_form.text_field :quantity, placeholder: "quantity" %></div>
@@ -27,7 +27,7 @@
     <div class="the-icons"><i class="demo-icon icon-globe"></i>
     <%= todo_form.text_field :how_to_link, placeholder: "link to How To" %></div>
 
-    <%= todo_form.file_field :images %>
+    <%= todo_form.file_field :image %>
 
   <% end %>
   <%= form.submit "Add supply details" %>
