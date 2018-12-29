@@ -15,3 +15,7 @@ From: <%= @detail.todo.source %>
 Link to get: <%= @detail.todo.source_link %>
 <br />
 Link to how to: <%= @detail.todo.how_to_link %>
+
+<% if @detail.image.attached? %>
+  <%= image_tag @detail.image  %>
+<% end %>
