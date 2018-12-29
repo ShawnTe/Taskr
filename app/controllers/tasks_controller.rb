@@ -9,7 +9,7 @@ class TasksController < ApplicationController
 
     @task = user.tasks.build(task_params)
   if @task.save
-      redirect_to @task
+      render "add_supply"
     else
       render :new
     end
@@ -17,14 +17,12 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    # helpers.check_due_date(@task)
   end
 
   def edit
   end
 
   def update
-    p task_params
     @task = Task.find(params[:id])
     @task.update(task_params)
     @task.update(last_date_done: Time.new)
@@ -32,6 +30,11 @@ class TasksController < ApplicationController
   end
 
   def destroy
+  end
+
+  def add_contact
+    @task = Task.find(params[:task_id])
+    render "add_contact"
   end
 
   private

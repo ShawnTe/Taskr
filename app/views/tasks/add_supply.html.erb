@@ -1,0 +1,5 @@
+Q: Will you need to get supplies?
+
+<%= link_to 'YES', new_detail_path(:task => {:task_id => @task.id}, :detail_type => "supply") %>
+
+<%= link_to 'NO', task_add_contact_path(:task_id => @task.id, :detail_type => "contact" ) %>

@@ -1,3 +1,7 @@
-<h1>Add Service details</h1>
+<h1>Add todo for <%= @task.title %> </h1>
 
-<%= render 'form' %>
+<% if @detail_type == "supply" %>
+  <%= render 'supply_details/form' %>
+<% elsif @detail_type == "contact" %>
+  <%= render 'contact_details/form' %>
+<% end %>

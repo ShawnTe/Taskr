@@ -1,7 +1,8 @@
 class DetailsController < ApplicationController
 
   def new
-    @task = Task.find(params[:task][:task_id])
+    @detail_type = params[:detail_type]
+    @task = Task.find(params[:task_id])
     @detail = Detail.new
     render
   end
@@ -20,7 +21,6 @@ class DetailsController < ApplicationController
   def edit
     @task = Task.find(params[:task][:task_id])
     @detail = Detail.find(params[:id])
-    # @detail.todo
     render
   end
 

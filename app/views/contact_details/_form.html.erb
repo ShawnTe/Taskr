@@ -1,8 +1,30 @@
-in contacts/_form
+<%= form_for @detail do |form| %>
+    <%= form.hidden_field :todo_type, value: ContactDetail %>
+  <%= form.fields_for :todo do |todo_form| %>
+    <%= hidden_field_tag 'task_id', @task.id %>
 
-<div class="the-icons"><i class="demo-icon icon-building"></i>
-<%= todo_form.text_field :company, placeholder: "company" %>
+    <div class="the-icons"><i class="demo-icon icon-building"></i>
+    <%= todo_form.text_field :company, placeholder: "company" %></div>
 
-<div class="the-icons"><i class="demo-icon icon-user"></i>
-<%= todo_form.text_field :name, placeholder: "name" %>
+    <div class="the-icons"><i class="demo-icon icon-user"></i>
+    <%= todo_form.text_field :name, placeholder: "name" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-globe"></i>
+    <%= todo_form.text_field :url, placeholder: "url" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-envelope-open-o"></i>
+    <%= todo_form.text_field :email, placeholder: "email" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-volume-control-phone"></i>
+    <%= todo_form.text_field :work_phone, placeholder: "landline" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-mobile"></i>
+    <%= todo_form.text_field :mobile_phone, placeholder: "mobile" %></div>
+
+    <div class="the-icons"><i class="demo-icon icon-doc-text"></i>
+    <%= todo_form.text_area :notes, size: "40x6", placeholder: "notes" %></div>
+
+  <% end %>
+  <%= form.submit "Add contact details" %>
+<% end %>
 
