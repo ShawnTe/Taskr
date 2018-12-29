@@ -1,4 +1,4 @@
 class SupplyDetail < ApplicationRecord
   has_many :details, as: :todo
-  has_many_attached :images
+  has_one_attached :image
 end
