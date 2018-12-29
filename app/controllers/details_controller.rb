@@ -1,6 +1,8 @@
 class DetailsController < ApplicationController
 
   def new
+    p params
+    p "****************         **************"
     @detail_type = params[:detail_type]
     @task = Task.find(params[:task_id])
     @detail = Detail.new
@@ -10,8 +12,7 @@ class DetailsController < ApplicationController
   def create
     task = Task.find(params[:task_id])
     detail = task.details.create(detail_params)
-    p detail_params[:todo]
-    redirect_to root_path, redirect_options_for(detail)
+    redirect_to task_path(task), redirect_options_for(detail)
   end
 
   def show
@@ -58,7 +59,7 @@ class DetailsController < ApplicationController
 
   def redirect_options_for(detail)
     if detail.persisted?
-      { notice: "Todo created successfully" }
+      { notice: "Todo created successfully." }
     else
       { alert: "Todo not saved" }
     end

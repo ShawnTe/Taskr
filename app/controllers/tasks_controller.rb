@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   if @task.save
       render "add_supply"
     else
+      @error_message = "Task not saved. Did you enter a title and due date?"
       render :new
     end
   end
@@ -42,4 +43,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :first_due_date, :notes, :frequency_unit, :frequency_number, :date_completed)
   end
+
 end

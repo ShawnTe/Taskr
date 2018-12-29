@@ -1,3 +1,4 @@
+<%= link_to "<< back to " + @task.title, @task %>
 <h2>Get</h2>
 <%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
 <br />
@@ -16,6 +17,5 @@ Link to get: <%= @detail.todo.source_link %>
 <br />
 Link to how to: <%= @detail.todo.how_to_link %>
 
-<% if @detail.image.attached? %>
-  <%= image_tag @detail.image  %>
-<% end %>
+
+[Need to figure out how to show image!!!]

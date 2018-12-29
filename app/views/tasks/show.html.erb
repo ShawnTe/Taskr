@@ -1,6 +1,13 @@
 <h1><%= @task.title %></h1>
 <div class="the-icons"><i class="demo-icon icon-edit"></i>&nbsp;&nbsp;<i class="demo-icon icon-trash-empty"></i></div>
 
+<% if notice.present? %>
+  <%= notice %><br />
+  <% if @task.details.last.todo_type == "SupplyDetail" %>
+    Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
+  <% end %>
+<% end %>
+
 <% if @task.date_completed.nil? %>
  <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
 <% else %>

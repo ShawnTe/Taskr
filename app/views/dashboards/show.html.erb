@@ -1,4 +1,9 @@
 <h1>Upcoming</h1>
+
+<% if alert.present? %>
+  <%= alert %><br />
+<% end %>
+
 <%= link_to "Add a task", new_task_path %>
 <div class="upcoming-list">
     <% if @tasks.count >= 1 %>
