@@ -1,5 +1,10 @@
 <h1><%= @task.title %></h1>
-<div class="the-icons"><i class="demo-icon icon-edit"></i>&nbsp;&nbsp;<i class="demo-icon icon-trash-empty"></i></div>
+
+<div class="the-icons">
+  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+</div>
+
+<div class="the-icons"><i class="demo-icon icon-trash-empty"></i></div>
 
 <% if notice.present? %>
   <%= notice %><br />
@@ -31,7 +36,6 @@
 <div>
   <h2>To Do...</h2>
   <%= link_to '<i class="demo-icon icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id) %>
-
   <ul>
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
