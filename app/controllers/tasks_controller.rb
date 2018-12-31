@@ -27,7 +27,10 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    @task.update(last_date_done: Time.new)
+    # if params contains date_completed, then
+    if params.has_key?(:date_completed)
+      @task.update(last_date_done: Time.new)
+    end
     redirect_to root_path
   end
 

@@ -1,5 +1,4 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Edit <%= @task.title.downcase %></h1>
 <%= form_for @task, html: {class: "task-form"} do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.title || "Name of task" %>
