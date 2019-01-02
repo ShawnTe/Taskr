@@ -1,8 +1,6 @@
 class DetailsController < ApplicationController
 
   def new
-    p params
-    p "****************         **************"
     @detail_type = params[:detail_type]
     @task = Task.find(params[:task_id])
     @detail = Detail.new
@@ -21,12 +19,21 @@ class DetailsController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:task][:task_id])
     @detail = Detail.find(params[:id])
-    render
+    @task = Task.find(@detail.task_id)
+
+    case @detail.todo_type
+    when "SupplyDetail" then render 'supply_details/_form'
+    when "ContactDetail" then render 'contact_details/_form'
+    end
   end
 
   def update
+    task = Task.find(params[:task_id])
+    @detail = Detail.find(params[:id])
+    @detail.todo.update(update_todo_from_params)
+
+    redirect_to task
   end
 
   def check_date
@@ -35,6 +42,7 @@ class DetailsController < ApplicationController
     helpers.check_due_date(@task)
     redirect_to @detail
   end
+
 
   private
 
@@ -46,6 +54,18 @@ class DetailsController < ApplicationController
     case params[:detail][:todo_type]
     when "ContactDetail" then ContactDetail.new(contact_detail_todo_params)
     when "SupplyDetail" then SupplyDetail.new(supply_detail_todo_params)
+    end
+  end
+
+  def update_todo_from_params
+    case params[:detail][:todo_type]
+    when "ContactDetail"
+      then detail_params = contact_detail_todo_params
+    when "SupplyDetail"
+      then detail_params = supply_detail_todo_params
+    end
+    not_blank_params = detail_params.select do |key, value|
+      !value.blank?
     end
   end
 
