@@ -1,4 +1,8 @@
-<%= link_to "<< back to " + @task.title, @task %>
+<%= link_to "<< back", @task %>
+<div class="the-icons">
+  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id) %>
+</div>
+
 <h2>Get</h2>
 <%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
 <br />
