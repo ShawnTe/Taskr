@@ -35,7 +35,7 @@
 
 <div>
   <h2>To Do...</h2>
-  <%= link_to '<i class="demo-icon icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id) %>
+  <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id) %>
   <ul>
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
@@ -53,7 +53,3 @@
   </ul>
 </div>
 
-<div>
-  <h2>Notes</h2>
-  <%= @task.notes %>
-</div>
