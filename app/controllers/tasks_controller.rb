@@ -9,29 +9,37 @@ class TasksController < ApplicationController
 
     @task = user.tasks.build(task_params)
   if @task.save
-      redirect_to @task
+      render "add_supply"
     else
+      @error_message = "Task not saved. Did you enter a title and due date?"
       render :new
     end
   end
 
   def show
     @task = Task.find(params[:id])
-    helpers.check_due_date(@task)
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
-    p task_params
     @task = Task.find(params[:id])
     @task.update(task_params)
-    @task.update(last_date_done: Time.new)
+    # if params contains date_completed, then
+    if params.has_key?(:date_completed)
+      @task.update(last_date_done: Time.new)
+    end
     redirect_to root_path
   end
 
   def destroy
+  end
+
+  def add_contact
+    @task = Task.find(params[:task_id])
+    render "add_contact"
   end
 
   private
@@ -39,4 +47,5 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :first_due_date, :notes, :frequency_unit, :frequency_number, :date_completed)
   end
+
 end

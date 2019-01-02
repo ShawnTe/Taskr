@@ -4,7 +4,7 @@ module MessagesHelper
 
   def build_message(task)
     host = "http://5f843c0b.ngrok.io/"
-    task_url = host + "/tasks/#{task.id}"
+    task_url = host + "tasks/#{task.id}"
     p task_url
     message = "Time to #{task.title}.\n\n"
     if task.last_date_done
@@ -19,9 +19,9 @@ module MessagesHelper
     today = Date.today
 
     if today >= task.first_due_date - 14
-      p "Fake text sent. *****************"
       message = build_message(task)
-      # TwilioTextMessenger.new(message).send_message
+      TwilioTextMessenger.new(message).send_message
+      p "Fake text sent. *****************"
     else
       p "first_due_date is greater than two weeks away. No text sent."
     end

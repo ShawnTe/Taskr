@@ -1,0 +1,29 @@
+<%= link_to "<< back", @task %>
+<div class="the-icons">
+  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id)%>
+</div>
+
+<div class="the-icons"><i class="demo-icon icon-building"></i>
+<%= @detail.todo.company %><br /></div>
+
+<div class="the-icons"><i class="demo-icon icon-user"></i>
+<%= @detail.todo.name %><br /></div>
+
+<div class="the-icons"><i class="demo-icon icon-globe"></i>
+<%= url_for @detail.todo.url  %><br />
+
+<div class="the-icons"><i class="demo-icon icon-envelope-open-o"></i>
+<%= @detail.todo.email %><br />
+
+<div class="the-icons"><i class="demo-icon icon-volume-control-phone"></i>
+  <% unless @detail.todo.work_phone.blank? %>
+    <%= link_to @detail.todo.work_phone, "tel:#{@detail.todo.work_phone}" %><br />
+  <% end %>
+
+<div class="the-icons"><i class="demo-icon icon-mobile"></i>
+  <% unless @detail.todo.mobile_phone.blank? %>
+    <%= link_to @detail.todo.mobile_phone, "tel:#{@detail.todo.mobile_phone}" %><br />
+  <% end %>
+
+<div class="the-icons"><i class="demo-icon icon-doc-text"></i>
+<%= @detail.todo.notes %><br />

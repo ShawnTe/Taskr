@@ -1,0 +1,25 @@
+<%= link_to "<< back", @task %>
+<div class="the-icons">
+  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id) %>
+</div>
+
+<h2>Get</h2>
+<%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
+<br />
+Brand: <%= @detail.todo.brand %>
+<br />
+Model: <%= @detail.todo.model %>
+
+<br />
+Size: <%= @detail.todo.size %>
+<br />
+
+<br />
+From: <%= @detail.todo.source %>
+<br />
+Link to get: <%= @detail.todo.source_link %>
+<br />
+Link to how to: <%= @detail.todo.how_to_link %>
+
+
+[Need to figure out how to show image!!!]

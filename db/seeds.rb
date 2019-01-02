@@ -47,3 +47,8 @@ contact_detail = ContactDetail.create({
 details_contact = task2.details.build({todo_type: ContactDetail, todo_id: contact_detail.id })
 details_contact.save
 
+Frequency.create(unit: "months")
+Frequency.create(unit: "years")
+Frequency.create(unit: "weeks")
+Frequency.create(unit: "days")
+

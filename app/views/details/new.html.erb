@@ -1,3 +1,10 @@
-<h1>Add Service details</h1>
+<h1>Add todo for <%= @task.title %> </h1>
 
-<%= render 'form' %>
+
+<% if @detail_type == "supply" %>
+  <%= render 'supply_details/form' %>
+<% elsif @detail_type == "contact" %>
+  <%= render 'contact_details/form' %>
+<% else %>
+  <%= link_to "Supply", new_detail_path(:task_id => @task.id, :detail_type => "supply") %> or <%= link_to "Contact", new_detail_path(:task_id => @task.id, :detail_type => "contact") %>?
+<% end %>
