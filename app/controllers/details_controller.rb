@@ -43,6 +43,15 @@ class DetailsController < ApplicationController
     redirect_to @detail
   end
 
+  def destroy
+    detail = Detail.find(params[:id])
+    task = Task.find(detail.task_id)
+    todo = delete_todo_from_params(detail)
+    todo.destroy
+    # supply = SupplyDetail.find(detail.todo_id)
+    # supply.destroy
+    redirect_to task
+  end
 
   private
 
@@ -51,6 +60,8 @@ class DetailsController < ApplicationController
   end
 
   def todo_from_params
+    p params
+    p "@@@@@@@@@@@@@"
     case params[:detail][:todo_type]
     when "ContactDetail" then ContactDetail.new(contact_detail_todo_params)
     when "SupplyDetail" then SupplyDetail.new(supply_detail_todo_params)
@@ -67,6 +78,16 @@ class DetailsController < ApplicationController
     not_blank_params = detail_params.select do |key, value|
       !value.blank?
     end
+  end
+
+  def delete_todo_from_params(detail)
+    case detail.todo_type
+    when "ContactDetail"
+      then detail_to_delete = ContactDetail.find(detail.todo_id)
+    when "SupplyDetail"
+      then detail_to_delete = SupplyDetail.find(detail.todo_id)
+    end
+    detail_to_delete
   end
 
   def contact_detail_todo_params

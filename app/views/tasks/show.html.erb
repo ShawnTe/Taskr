@@ -40,13 +40,14 @@
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
           <li><%= link_to "Get supplies (#{detail.todo.name})", detail_path(detail.id) %></li>
-        <% else %>
+        <% elsif detail.todo.instance_of? ContactDetail %>
           <% if detail.todo.company.blank? %>
             <% display_name = detail.todo.name %>
           <% else %>
             <% display_name = detail.todo.company %>
           <% end %>
           <li>Make appointment: <%= link_to display_name, detail_path(detail.id)%> </li>
+        <% else %>
         <% end %>
 
     <% end %>
