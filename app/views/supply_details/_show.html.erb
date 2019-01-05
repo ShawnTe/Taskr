@@ -19,9 +19,9 @@ Size: <%= @detail.todo.size %>
 <br />
 From: <%= @detail.todo.source %>
 <br />
-Link to get: <%= @detail.todo.source_link %>
+To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_link %>
 <br />
-Link to how to: <%= @detail.todo.how_to_link %>
+How to: <%= link_to limited_url(@detail.todo.how_to_link), @detail.todo.how_to_link %>
 <br />
 <br />
 
