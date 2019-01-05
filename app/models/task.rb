@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :user
-  has_many :details
+  has_many :details, dependent: :destroy
 
   validates :title, :first_due_date, presence: true
 

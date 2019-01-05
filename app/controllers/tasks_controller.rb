@@ -35,6 +35,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
   end
 
   def add_contact
