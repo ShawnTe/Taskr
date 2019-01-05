@@ -18,12 +18,12 @@ module MessagesHelper
   def check_due_date(task)
     today = Date.today
 
-    if today >= task.first_due_date - 14
+    if today >= task.next_due_date - 14
       message = build_message(task)
       TwilioTextMessenger.new(message).send_message
       p "Fake text sent. *****************"
     else
-      p "first_due_date is greater than two weeks away. No text sent."
+      p "next_due_date is greater than two weeks away. No text sent."
     end
   end
 end

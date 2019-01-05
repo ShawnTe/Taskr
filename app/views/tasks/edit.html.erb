@@ -1,11 +1,17 @@
 <h1>Edit <%= @task.title.downcase %></h1>
+
+<% if flash[:alert] %>
+a ntoice in flash
+  <%= flash[:alert] %><br />
+<% end %>
+
 <%= form_for @task, html: {class: "task-form"} do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.title || "Name of task" %>
   <br />
 
-  <%= f.label :first_due_date %>
-  <%= f.date_field :first_due_date, placeholder: @task.first_due_date || "Click arrow for calendar" %>
+  <%= f.label :next_due_date %>
+  <%= f.date_field :next_due_date, placeholder: @task.next_due_date || "Click arrow for calendar" %>
   <br />
 
   Do every:

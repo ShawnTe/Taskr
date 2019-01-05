@@ -1,12 +1,42 @@
 module ApplicationHelper
-
   def my_link_to(url)
-    # ^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$
     url.gsub(/https?:\/\/w{0,3}\./, "")
-    # url.gsub(/trello/, "")
   end
 
   def limited_url(url)
     /(.*)(?=\/)/.match(url)
+  end
+
+  def completion_tasks(task)
+
+    # create entry in task_history table
+
+    # change next_due_date
+    next_due_date = task.date_completed + frequency(task).day
+
+    task.update_attributes(:next_due_date => next_due_date, :date_completed => nil)
+
+    # prompt for correct next date
+
+
+  end
+
+
+  def frequency(task)
+    frequency_number = task.frequency_number
+    frequency_unit = task.frequency_unit
+    num_of_days = 0
+
+    case frequency_unit
+    when "days"
+      then num_of_days = frequency_number
+    when "weeks"
+      then num_of_days = frequency_number * 7
+    when "months"
+      then num_of_days = (frequency_number * 30.5).floor
+    when "years"
+      then num_of_days = (frequency_number * 365)
+    end
+    num_of_days
   end
 end
