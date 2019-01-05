@@ -7,7 +7,7 @@ a ntoice in flash
 
 <%= form_for @task, html: {class: "task-form"} do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, placeholder: @task.title || "Name of task" %>
+  <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
   <br />
 
   <%= f.label :next_due_date %>
