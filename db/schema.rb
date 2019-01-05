@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_29_184546) do
+ActiveRecord::Schema.define(version: 2019_01_05_041046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,14 +79,13 @@ ActiveRecord::Schema.define(version: 2018_12_29_184546) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title", null: false
-    t.date "first_due_date"
+    t.date "next_due_date"
     t.text "notes"
     t.string "frequency_unit"
     t.integer "frequency_number"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "last_date_done"
     t.date "date_completed"
   end
 
