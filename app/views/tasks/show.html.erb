@@ -25,7 +25,9 @@
 <div>
     <h2>Last done:</h2>
     <ul>
-      <li> need to add when have task history </li>
+      <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
+        <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
+      <% end %>
     </ul>
 </div>
 

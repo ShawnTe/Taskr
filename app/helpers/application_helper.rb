@@ -8,13 +8,17 @@ module ApplicationHelper
   end
 
   def completion_tasks(task)
-
     # create entry in task_history table
+    task_history = TaskHistory.new({ :task_id => task.id, :last_due_date => task.date_completed})
+    if task_history.save
+      # change next_due_date
+      p "task histoy entry successfully created"
+      next_due_date = task.date_completed + frequency(task).day
 
-    # change next_due_date
-    next_due_date = task.date_completed + frequency(task).day
-
-    task.update_attributes(:next_due_date => next_due_date, :date_completed => nil)
+      task.update_attributes(:next_due_date => next_due_date, :date_completed => nil)
+    else
+      p "task history entry not created"
+    end
 
     # prompt for correct next date
 
