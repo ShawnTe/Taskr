@@ -37,7 +37,8 @@ class DetailsController < ApplicationController
   end
 
   def check_date
-    @detail = Detail.find(7)
+    p params
+    @detail = Detail.find(params[:detail_id])
     @task = Task.find(@detail.task_id)
     helpers.check_due_date(@task)
     redirect_to @detail
@@ -48,8 +49,6 @@ class DetailsController < ApplicationController
     task = Task.find(detail.task_id)
     todo = delete_todo_from_params(detail)
     todo.destroy
-    # supply = SupplyDetail.find(detail.todo_id)
-    # supply.destroy
     redirect_to task
   end
 
