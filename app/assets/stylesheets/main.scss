@@ -1,19 +1,83 @@
+/* Coolors Exported Palette - coolors.co/3f0d12-a71d31-f1f0cc-d5bf86-8d775f */
+
+/* HSL */
+$wine: hsla(354%, 66%, 15%, 1);
+$red: hsla(351%, 70%, 38%, 1);
+$pale: hsla(58%, 57%, 87%, 1);
+$sand: hsla(43%, 48%, 68%, 1);
+$mud: hsla(31%, 19%, 46%, 1);
+
+/* RGB */
+$wine: rgba(63, 13, 18, 1);
+$red: rgba(167, 29, 49, 1);
+$pale: rgba(241, 240, 204, 1);
+$sand: rgba(213, 191, 134, 1);
+$mud: rgba(141, 119, 95, 1);
+
 body {
   font-family: Futura;
-  color: DarkSlateGray;
+  color: $sand;
+  font-size: 1em;
+
 }
 
 #container {
-  background-color: cornsilk;
-  /*border-width: 3;*/
+  background-color: $mud;
   border-style: outset;
   padding: 3%;
   margin: auto;
-  width: 400px;
 }
 
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.upcoming-item {
+  background: $pale;
+  color: $mud;
+  border-radius: 3%;
+  padding: 2%;
+  padding-left: 4%;
+  margin: 2%;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.task-title {
+  color: $wine;
+  font-size: 1.4em;
+}
+
+
+@media (min-width: 600px) {
+  body {
+    width: 400px;
+    margin: auto;
+  }
+
 }
