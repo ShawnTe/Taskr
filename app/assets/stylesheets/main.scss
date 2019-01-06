@@ -1,17 +1,17 @@
 /* Coolors Exported Palette - coolors.co/3f0d12-a71d31-f1f0cc-d5bf86-8d775f */
 
 /* HSL */
-$wine: hsla(354%, 66%, 15%, 1);
+/*$wine: hsla(354%, 66%, 15%, 1);
 $red: hsla(351%, 70%, 38%, 1);
 $pale: hsla(58%, 57%, 87%, 1);
 $sand: hsla(43%, 48%, 68%, 1);
-$mud: hsla(31%, 19%, 46%, 1);
+$mud: hsla(31%, 19%, 46%, 1);*/
 
 /* RGB */
 $wine: rgba(63, 13, 18, 1);
 $red: rgba(167, 29, 49, 1);
 $pale: rgba(241, 240, 204, 1);
-$sand: rgba(213, 191, 134, 1);
+$sand: rgba(214, 205, 182, 1);
 $mud: rgba(141, 119, 95, 1);
 
 body {
@@ -57,6 +57,8 @@ ul {
   padding: 0;
 }
 
+
+/*Dashboard*/
 li.upcoming-item {
   background: $pale;
   color: $mud;
@@ -71,6 +73,51 @@ li.upcoming-item {
 .task-title {
   color: $wine;
   font-size: 1.4em;
+}
+
+
+/*Forms*/
+.form-header {
+  background: $mud;
+}
+form {
+  background: $sand;
+  padding: 3%;
+  color: $wine;
+  font-size: 1.2em;
+}
+
+label {
+  display: block;
+  width: 80%;
+  float: left;
+}
+
+label:after { content: ": " }
+
+input {
+  border: 2px solid $mud;
+  width: 80%;
+  background: #fff;
+  padding: 3px;
+  height: 1.5em;
+  font-size: 1em;
+}
+
+/*fieldset legend { background: #CCA383; padding: 6px; font-weight: bold; }*/
+
+
+input[type=submit] {
+  margin: auto;
+  margin-top: 6%;
+  margin-bottom: 5%;
+  width: 90px;
+  height: 36px;
+  font-size: 1.3em;
+  background: $red;
+  color: $sand;
+  border-radius: 10%;
+  border: 2px solid $pale;
 }
 
 

@@ -1,4 +1,6 @@
-<h1>New Task</h1>
+<div class="form-header">
+  <h1>New Task</h1>
+</div>
 <%= @error_message %>
 <%= form_for @task, html: {class: "new-form"} do |f| %>
   <%= f.label :title %>
@@ -8,12 +10,10 @@
   <%= f.label :next_due_date %>
   <%= f.date_field :next_due_date, placeholder: @task.next_due_date || "Click arrow for calendar" %>
   <br />
+  <br />
 
   Do every:
   <%= f.select :frequency_number, (0..31) %>
   <%= collection_select(:task, :frequency_unit, Frequency.all, :unit, :time_unit ) %>
-
-  <br />
-  <br />
-  <%= f.submit "Create" %>
+  <%= f.submit "Save" %>
 <% end %>

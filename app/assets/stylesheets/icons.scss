@@ -1,6 +1,17 @@
+/* Coolors Exported Palette - coolors.co/3f0d12-a71d31-f1f0cc-d5bf86-8d775f */
+
+/* RGB */
+$wine: rgba(63, 13, 18, 1);
+$red: rgba(167, 29, 49, 1);
+$pale: rgba(241, 240, 204, 1);
+$sand: rgba(213, 191, 134, 1);
+$sand-light: rgba(213, 191, 134, .4);
+$mud: rgba(141, 119, 95, 1);
+
 .the-icons {
-  font-size: 24px;
+  font-size: 30px;
   line-height: 32px;
+  color: $pale;
 }
 .right {
   float: right;
@@ -16,6 +27,8 @@
   font-size: 32px;
   line-height: 32px;
   width: 44px;
-  background-color: rgba(98, 101, 103, .2);
+  color: $wine;
+  background-color: $sand-light;
+  border-radius: 10%;
 }
 
