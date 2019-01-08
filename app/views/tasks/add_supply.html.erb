@@ -1,5 +1,13 @@
-Q: Will you need to get supplies?
+<div class="question-section">
+  <div class="question">
+    Q:<br />Will you need to get supplies?
+  </div>
 
-<%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "supply") %>
-
-<%= link_to 'NO', task_add_contact_path(:task_id => @task.id, :detail_type => "contact" ) %>
+  <div class="center">
+    <div class="btn-directional">
+    <%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "btn-pale" %>
+    </div>
+    <div class="btn-directional">
+      <%= link_to 'NO', task_add_contact_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale" %>
+  </div>
+</div>
