@@ -104,20 +104,88 @@ input {
   font-size: 1em;
 }
 
-/*fieldset legend { background: #CCA383; padding: 6px; font-weight: bold; }*/
-
-
 input[type=submit] {
-  margin: auto;
-  margin-top: 6%;
-  margin-bottom: 5%;
+  margin: 4% auto;
   width: 90px;
-  height: 36px;
-  font-size: 1.3em;
+  height: 38px;
+  font-size: 1.2em;
   background: $red;
   color: $sand;
   border-radius: 10%;
   border: 2px solid $pale;
+}
+
+form.button_to {
+  background: $mud;
+  padding: 0;
+}
+
+
+input.mark-done {
+  border: 3px solid $pale;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.task-button-section {
+  vertical-align: top;
+  line-height: 10px;
+  height: 50px;
+
+}
+.done-section {
+  /*display: inline-block;*/
+  background: $mud;
+  /*width: 90px;
+  height: 80px;*/
+  float: right;
+  margin-right: 10%;
+
+}
+
+.task-notice {
+
+}
+
+/*Question*/
+.question-section {
+  margin-top: 10%;
+  padding: 3%;
+}
+
+.question {
+  font-size: 1.5em;
+}
+
+.btn-directional {
+  display: inline-block;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  width: 70px;
+  height: 38px;
+  font-size: 1.2em;
+  background: $red;
+  border-radius: 10%;
+  border: 2px solid $sand;
+  text-align: center;
+  color: $sand;
+  position: relative;
+}
+
+.center {
+  width: 180px;
+  margin: auto;
+}
+
+.btn-pale {
+  position: absolute;
+  top: 50%;
+  color: $sand;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 

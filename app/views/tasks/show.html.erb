@@ -1,21 +1,24 @@
 <h1><%= @task.title %></h1>
 
-<div class="the-icons">
-  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+<div class="task-button-section">
+  <div class="inline">
+    <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+    <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
+  </div>
+  <div class="done-section">
+   <%= button_to("Done!", task_path(id: @task.id), class: 'btn mark-done', :method => :patch, params: { task: { date_completed: Time.new}}) %>
+  </div>
+
+  <div class="task-notice">
+    <% if notice.present? %>
+      <%= notice %><br />
+      <% if @task.details.last.todo_type == "SupplyDetail" %>
+        Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="the-icons">
-  <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
-</div>
-
-<% if notice.present? %>
-  <%= notice %><br />
-  <% if @task.details.last.todo_type == "SupplyDetail" %>
-    Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
-  <% end %>
-<% end %>
-
- <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
 <br />
 <div>
   Next up: <%= @task.next_due_date.strftime("%B %d, %Y") %><br />
