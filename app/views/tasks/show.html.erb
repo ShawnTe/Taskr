@@ -26,8 +26,8 @@
 </div>
 
 <div>
-    <h2 class="tasks">Last done:</h2>
-    <ul class="indent-list">
+    <h2 class="less-bottom-padding">Last done:</h2>
+    <ul class="indent">
       <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
         <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
       <% end %>

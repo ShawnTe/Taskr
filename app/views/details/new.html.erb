@@ -7,7 +7,17 @@
     <% elsif @detail_type == "contact" %>
       <%= render 'contact_details/form' %>
     <% else %>
-      <%= link_to "Supply", new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "outline wine" %> or <%= link_to "Contact", new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "outline wine right-space" %>?
+      <h4 class="less-bottom-padding indent">Setup...</h4>
+      <div class="center width200">
+        <div class="btn">
+        <%= link_to 'Supply', new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "btn-pale" %>
+        </div>
+        <div class="btn">
+          <%= link_to 'Contact', new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
+
+
