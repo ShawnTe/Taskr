@@ -1,4 +1,4 @@
-<h1>Upcoming due...</h1>
+<h1>Upcoming...</h1>
 
 <% if alert.present? %>
   <%= alert %><br />
@@ -8,12 +8,11 @@
 
 <div>
     <% if @tasks.count >= 1 %>
-      <ul class="upcoming-list">
+      <ul>
           <% @tasks.each do |task| %>
-            <li class="upcoming-item">
-              <%= link_to task.title.capitalize, task_path(task.id), class: "task-title" %> <br />
-              <em>next due:</em> <%= task.next_due_date.strftime("%B %d, %Y") %>
-            </li>
+              <%= link_to "<li class='upcoming-item task-title'>#{task.title.capitalize}</li>".html_safe, task_path(task.id) %>
+              <span class="wine"><em>next due:</em> <%= task.next_due_date.strftime("%B %d, %Y") %></span>
+
           <% end %>
       </ul>
     <% else %>
