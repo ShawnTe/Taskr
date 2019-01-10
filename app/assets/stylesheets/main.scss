@@ -219,8 +219,8 @@ textarea {
   margin: auto;
 }
 
-.width200 {
-  width: 200px;
+input[type=submit].width200 {
+  width: 120px;
 }
 
 .btn-pale {
@@ -231,6 +231,9 @@ textarea {
   transform: translate(-50%, -50%);
 }
 
+input[type=submit].small-font {
+  font-size: .6em;
+}
 
 @media (min-width: 600px) {
   body {

@@ -26,16 +26,18 @@
 </div>
 
 <div>
-    <h2 class="less-bottom-padding">Last done:</h2>
-    <ul class="indent">
-      <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
-        <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
-      <% end %>
-    </ul>
+    <% if @task.task_histories.count > 0 %>
+      <h2 class="less-bottom-padding">Last done:</h2>
+      <ul class="indent">
+        <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
+          <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
+        <% end %>
+      </ul>
+    <% end %>
 </div>
 
 <div class="align-section">
-  <h2 class="inline">To Do...</h2>
+  <h2 class="inline">Add supply or contact...</h2>
   <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id), class: "inline" %>
   <ul class="indent-list">
       <% @task.details.each do |detail| %>
