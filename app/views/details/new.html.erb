@@ -1,10 +1,13 @@
-<h1>Add todo for <%= @task.title %> </h1>
+<h1><%= @task.title %></h1>
 
-
-<% if @detail_type == "supply" %>
-  <%= render 'supply_details/form' %>
-<% elsif @detail_type == "contact" %>
-  <%= render 'contact_details/form' %>
-<% else %>
-  <%= link_to "Supply", new_detail_path(:task_id => @task.id, :detail_type => "supply") %> or <%= link_to "Contact", new_detail_path(:task_id => @task.id, :detail_type => "contact") %>?
-<% end %>
+<div>
+  <div class="center">
+    <% if @detail_type == "supply" %>
+      <%= render 'supply_details/form' %>
+    <% elsif @detail_type == "contact" %>
+      <%= render 'contact_details/form' %>
+    <% else %>
+      <%= link_to "Supply", new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "outline wine" %> or <%= link_to "Contact", new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "outline wine right-space" %>?
+    <% end %>
+  </div>
+</div>

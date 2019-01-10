@@ -3,11 +3,11 @@
     Q:<br />Will you need to get supplies?
   </div>
 
-  <div class="center">
+  <div class="center width200">
     <div class="btn-directional">
-    <%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "btn-pale" %>
+    <%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "btn-pale btn" %>
     </div>
     <div class="btn-directional">
-      <%= link_to 'NO', task_add_contact_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale" %>
+      <%= link_to 'NO', task_add_contact_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale btn" %>
   </div>
 </div>

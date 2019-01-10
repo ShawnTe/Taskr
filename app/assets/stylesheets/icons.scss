@@ -13,9 +13,11 @@ $mud: rgba(141, 119, 95, 1);
   line-height: 30px;
   color: $pale;
 }
+
 .right {
   float: right;
 }
+
 .large-icon {
   font-size: 32px;
   line-height: 32px;
@@ -39,4 +41,8 @@ $mud: rgba(141, 119, 95, 1);
 
 .icon-plus-squared-alt {
   padding-left: 20%;
+}
+
+.icon-building {
+  display: inline-block;
 }

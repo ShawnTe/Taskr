@@ -20,5 +20,5 @@ a ntoice in flash
   <%= collection_select(:task, :frequency_unit, Frequency.all, :unit, :time_unit ) %>
 
   <br />
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "btn" %>
 <% end %>

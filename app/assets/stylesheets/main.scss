@@ -47,6 +47,10 @@ a:hover {
   text-decoration: none;
 }
 
+.btn:hover {
+  background: $red;
+}
+
 a:active {
   text-decoration: none;
 }
@@ -97,7 +101,7 @@ label:after { content: ": " }
 
 input {
   border: 2px solid $mud;
-  width: 80%;
+  width: 90%;
   background: #fff;
   padding: 3px;
   height: 1.5em;
@@ -108,8 +112,8 @@ input[type=submit] {
   margin: 4% auto;
   width: 90px;
   height: 38px;
-  font-size: 1.2em;
-  background: $red;
+  font-size: 1.1em;
+  background: $wine;
   color: $sand;
   border-radius: 10%;
   border: 2px solid $pale;
@@ -130,6 +134,19 @@ input[type=submit].mark-done {
   padding: 0;
 }
 
+textarea {
+  width: 80%;
+  border: 2px solid $mud;
+  background: #fff;
+  padding: 3px;
+  font-size: 1em;
+  height: 4em;
+}
+
+.new-detail {
+  width: 90%;
+}
+
 .align-section {
   vertical-align: top;
   line-height: 30px;
@@ -146,8 +163,27 @@ input[type=submit].mark-done {
 h2.tasks {
   margin-bottom: 1%;
 }
+
 .indent-list {
   margin-left: 10%;
+}
+
+.outline {
+  padding: 2%;
+  margin: 4% auto;
+  width: 70px;
+  height: 38px;
+  font-size: 1.1em;
+  border-radius: 10%;
+  border: 2px solid $sand;
+}
+
+.wine {
+  color: $wine;
+}
+
+.right-space {
+  margin-right: 1%;
 }
 
 /*Question*/
@@ -167,7 +203,7 @@ h2.tasks {
   width: 70px;
   height: 38px;
   font-size: 1.2em;
-  background: $red;
+  background: $wine;
   border-radius: 10%;
   border: 2px solid $sand;
   text-align: center;
@@ -175,9 +211,16 @@ h2.tasks {
   position: relative;
 }
 
+.btn-directional:hover {
+  background-color: $red;
+}
+
 .center {
-  width: 180px;
   margin: auto;
+}
+
+.width200 {
+  width: 200px;
 }
 
 .btn-pale {

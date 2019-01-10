@@ -15,5 +15,5 @@
   Do every:
   <%= f.select :frequency_number, (0..31) %>
   <%= collection_select(:task, :frequency_unit, Frequency.all, :unit, :time_unit ) %>
-  <%= f.submit "Save" %>
+  <%= f.submit "Save", class: "btn" %>
 <% end %>

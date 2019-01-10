@@ -1,5 +1,13 @@
-Q: Will you call someone else to do?
+<div class="question-section">
+  <div class="question">
+    Q:<br />Will someone else do the task?
+  </div>
 
-<%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "contact") %>
-
-<%= link_to 'NO', @task %>
+ <div class="center width200">
+    <div class="btn-directional">
+    <%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale btn" %>
+    </div>
+    <div class="btn-directional">
+      <%= link_to 'NO', @task, class: "btn-pale btn" %>
+  </div>
+</div>
