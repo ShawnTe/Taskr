@@ -100,9 +100,9 @@ class DetailsController < ApplicationController
 
   def redirect_options_for(detail)
     if detail.persisted?
-      { notice: "Todo created successfully." }
+      { notice: "Task todo created successfully." }
     else
-      { alert: "Todo not saved" }
+      { alert: "Task todo not saved" }
     end
   end
 
