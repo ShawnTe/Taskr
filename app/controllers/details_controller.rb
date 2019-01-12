@@ -1,4 +1,5 @@
 class DetailsController < ApplicationController
+  before_action :require_login
 
   def new
     @detail_type = params[:detail_type]
