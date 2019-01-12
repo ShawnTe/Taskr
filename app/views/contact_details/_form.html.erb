@@ -1,35 +1,42 @@
-<h2>Edit contact</h2>
-<%= simple_form_for @detail do |form| %>
+<h2>Contact</h2>
+<%= form_for @detail do |form| %>
     <%= form.hidden_field :todo_type, value: ContactDetail %>
-  <%= form.simple_fields_for :todo do |todo_form| %>
+  <%= form.fields_for :todo do |todo_form| %>
     <%= hidden_field_tag 'task_id', @task.id %>
 
-    <div class="the-icons"><i class="demo-icon icon-building"></i>
-    <%= todo_form.text_field :company, placeholder: @detail.todo.company || "company" %></div>
-
-    <div class="the-icons"><i class="demo-icon icon-user"></i>
-    <%= todo_form.text_field :name, placeholder: @detail.todo.name || "name" %></div>
-
-    <div class="the-icons"><i class="demo-icon icon-globe"></i>
-    <%= todo_form.text_field :url, placeholder: @detail.todo.url || "url" %>
-
+    <div>
+        <%= todo_form.label "Company" %>
+        <%= todo_form.text_field :company, placeholder: @detail.todo.try(:company), value: @detail.todo.try(:company), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Name" %>
+        <%= todo_form.text_field :name, placeholder: @detail.todo.try(:name), value: @detail.todo.try(:name), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Url" %>
+        <%= todo_form.text_field :url, placeholder: @detail.todo.try(:url), value: @detail.todo.try(:url), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Email" %>
+        <%= todo_form.text_field :email, placeholder: @detail.todo.try(:email), value: @detail.todo.try(:email), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Landline" %>
+        <%= todo_form.text_field :work_phone, placeholder: @detail.todo.try(:work_phone), value: @detail.todo.try(:work_phone), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Mobile" %>
+        <%= todo_form.text_field :mobile_phone, placeholder: @detail.todo.try(:mobile_phone), value: @detail.todo.try(:mobile_phone), required: false %>
+    </div>
+    <div>
+        <%= todo_form.label "Notes" %>
+        <%= todo_form.text_area :notes, placeholder: @detail.todo.try(:notes), value: @detail.todo.try(:notes), required: false %>
     </div>
 
 
 
-    <div class="the-icons"><i class="demo-icon icon-envelope-open-o"></i>
-    <%= todo_form.text_field :email, placeholder: (@detail.todo.email || "email") %></div>
-
-    <div class="the-icons"><i class="demo-icon icon-volume-control-phone"></i>
-    <%= todo_form.text_field :work_phone, placeholder: @detail.todo.work_phone || "landline" %></div>
-
-    <div class="the-icons"><i class="demo-icon icon-mobile"></i>
-    <%= todo_form.text_field :mobile_phone, placeholder: @detail.todo.mobile_phone || "mobile" %></div>
-
-    <div class="the-icons"><i class="demo-icon icon-doc-text"></i>
-    <%= todo_form.text_area :notes, size: "40x6", placeholder: @detail.todo.notes || "notes" %></div>
 
   <% end %>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit", class: "btn" %>
 <% end %>
 

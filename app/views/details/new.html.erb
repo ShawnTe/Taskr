@@ -1,10 +1,23 @@
-<h1>Add todo for <%= @task.title %> </h1>
+<h1><%= @task.title %></h1>
+
+<div>
+  <div class="center">
+    <% if @detail_type == "supply" %>
+      <%= render 'supply_details/form' %>
+    <% elsif @detail_type == "contact" %>
+      <%= render 'contact_details/form' %>
+    <% else %>
+      <h4 class="less-bottom-padding indent">Setup...</h4>
+      <div class="center width200">
+        <div class="btn">
+        <%= link_to 'Supply', new_detail_path(:task_id => @task.id, :detail_type => "supply"), class: "btn-pale" %>
+        </div>
+        <div class="btn">
+          <%= link_to 'Contact', new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
-<% if @detail_type == "supply" %>
-  <%= render 'supply_details/form' %>
-<% elsif @detail_type == "contact" %>
-  <%= render 'contact_details/form' %>
-<% else %>
-  <%= link_to "Supply", new_detail_path(:task_id => @task.id, :detail_type => "supply") %> or <%= link_to "Contact", new_detail_path(:task_id => @task.id, :detail_type => "contact") %>?
-<% end %>

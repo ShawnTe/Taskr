@@ -2,8 +2,7 @@ user = User.create({ username: "cleanMe", text_number: "650-549-5775"})
 
 task1 = Task.create({
     title: 'Change water filter in fridge',
-    first_due_date: Time.new(2019,01,15),
-    last_date_done: Time.new(2018,01,15),
+    next_due_date: Time.new(2019,01,15),
     notes: 'Have extra filters in garage.',
     frequency_unit: "months",
     frequency_number: 6,
@@ -26,8 +25,7 @@ details_supply.save
 
 task2 = Task.create({
     title: 'Clean the carpets',
-    first_due_date: Time.new(2019,01,31),
-    last_date_done: Time.new(2018,01,31),
+    next_due_date: Time.new(2019,01,31),
     notes: 'Living Room, Family Room, Master Bed, 3 kids rooms. Schedule on a Weds, when all kids have after school activities.',
     frequency_unit: "years",
     frequency_number: 1,

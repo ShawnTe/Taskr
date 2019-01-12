@@ -6,7 +6,6 @@ class TasksController < ApplicationController
 
   def create
     user = User.last
-
     @task = user.tasks.build(task_params)
   if @task.save
       render "add_supply"
@@ -27,14 +26,19 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    # if params contains date_completed, then
-    if params.has_key?(:date_completed)
-      @task.update(last_date_done: Time.new)
+    if params[:task].has_key?(:date_completed)
+      helpers.completion_tasks @task
+      flash[:alert] = "Any changes to make?"
+      redirect_to edit_task_path @task
+      return
     end
     redirect_to root_path
   end
 
   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_path
   end
 
   def add_contact
@@ -45,7 +49,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :first_due_date, :notes, :frequency_unit, :frequency_number, :date_completed)
+    params.require(:task).permit(:title, :next_due_date, :notes, :frequency_unit, :frequency_number, :date_completed)
   end
 
 end
