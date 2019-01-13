@@ -1,11 +1,6 @@
 <h1>Edit <%= @task.title.downcase %></h1>
 
 <%= form_for @task, html: {class: "task-form"} do |f| %>
-  <% if flash[:alert] %>
-    <div class="red alert">
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
   <br />

@@ -1,0 +1,21 @@
+
+<div class="text-field">
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+</div>
+
+<div class="text-field">
+  <%= form.label "Text number" %>
+  <%= telephone_field(:user, :text_number, options = { pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}"})
+       %><br /><span class="font_8 italic">Format: 415-555-1212</span>
+</div>
+
+<div class="text-field">
+  <%= form.label :email %>
+  <%= form.text_field :email, type: 'email' %>
+</div>
+
+<div class="password-field">
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+</div>

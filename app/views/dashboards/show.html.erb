@@ -16,6 +16,10 @@
           <% end %>
       </ul>
     <% else %>
-      Upcoming tasks will appear here. <%= link_to "Add a task here!", new_task_path %>
+      <br />Click <i class="icon-plus-squared-alt demo-icon"></i> above to add a task.
+      <ul>
+        <li class='upcoming-item task-title'>Reminders will appear here.</li>
+        <span class="wine"><em>next due date</em></span>
+      </ul>
     <% end %>
 </div>

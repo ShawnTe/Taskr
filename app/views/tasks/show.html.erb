@@ -10,11 +10,8 @@
   </div>
 
   <div class="task-notice">
-    <% if notice.present? %>
-      <%= notice %><br />
-      <% if @task.details.last.todo_type == "SupplyDetail" %>
-        Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
-      <% end %>
+    <% if @task.details.last.todo_type == "SupplyDetail" %>
+      Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
     <% end %>
   </div>
 </div>
@@ -37,7 +34,7 @@
 </div>
 
 <div class="align-section">
-  <h2 class="inline">Add supply or contact...</h2>
+  <h2 class="inline">Todos...</h2>
   <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id), class: "inline" %>
   <ul class="indent-list">
       <% @task.details.each do |detail| %>

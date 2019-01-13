@@ -1,4 +1,5 @@
 class DetailsController < ApplicationController
+  before_action :require_login
 
   def new
     @detail_type = params[:detail_type]
@@ -99,9 +100,9 @@ class DetailsController < ApplicationController
 
   def redirect_options_for(detail)
     if detail.persisted?
-      { notice: "Todo created successfully." }
+      { notice: "Task todo created successfully." }
     else
-      { alert: "Todo not saved" }
+      { alert: "Task todo not saved" }
     end
   end
 
