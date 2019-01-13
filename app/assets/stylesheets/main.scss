@@ -1,19 +1,260 @@
+/* Coolors Exported Palette - coolors.co/3f0d12-a71d31-f1f0cc-d5bf86-8d775f */
+
+/* HSL */
+/*$wine: hsla(354%, 66%, 15%, 1);
+$red: hsla(351%, 70%, 38%, 1);
+$pale: hsla(58%, 57%, 87%, 1);
+$sand: hsla(43%, 48%, 68%, 1);
+$mud: hsla(31%, 19%, 46%, 1);*/
+
+/* RGB */
+$wine: rgba(63, 13, 18, 1);
+$red: rgba(167, 29, 49, 1);
+$pale: rgba(241, 240, 204, 1);
+$pale_trans: rgba(241, 240, 204, .5);
+$sand: rgba(214, 205, 182, 1);
+$mud: rgba(141, 119, 95, 1);
+$mud_trans: rgba(141, 119, 95, .5);
+
+
 body {
   font-family: Futura;
-  color: DarkSlateGray;
+  color: $sand;
+  font-size: 1em;
+
 }
 
 #container {
-  background-color: cornsilk;
-  /*border-width: 3;*/
+  background-color: $mud;
   border-style: outset;
-  padding: 3%;
+  padding: 3% 3% 20% 3%;
   margin: auto;
-  width: 400px;
 }
 
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: $red;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*Dashboard*/
+li.upcoming-item {
+  background: $pale_trans;
+  border-radius: 3%;
+  padding: 1%;
+  padding-left: 4%;
+  margin: 20px -10px 0px -10px;
+  /*margin-top: 4%;*/
+  /*margin-right: -10px;*/
+  /*margin-left: -10px;*/
+}
+
+.task-title {
+  color: $wine;
+  font-size: 1.6em;
+}
+
+.wine {
+  color: $wine;
+}
+
+/*Forms*/
+.form-header {
+  background: $mud;
+}
+form {
+  background: $sand;
+  padding: 3%;
+  color: $wine;
+  font-size: 1.2em;
+}
+
+label {
+  display: block;
+  width: 80%;
+  float: left;
+}
+
+label:after { content: ": " }
+
+input {
+  border: 2px solid $mud;
+  width: 90%;
+  background: #fff;
+  padding: 3px;
+  height: 1.5em;
+  font-size: 1em;
+}
+
+input[type=submit] {
+  margin: 4% auto;
+  width: 90px;
+  height: 38px;
+  font-size: 1.1em;
+  background: $wine;
+  color: $sand;
+  border-radius: 10%;
+  border: 2px solid $pale;
+}
+
+form.button_to {
+  background: $mud;
+  padding: 0;
+}
+
+
+input[type=submit].mark-done {
+  border: 3px solid $pale;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-top: -10px;
+  padding: 0;
+}
+
+textarea {
+  width: 80%;
+  border: 2px solid $mud;
+  background: #fff;
+  padding: 3px;
+  font-size: 1em;
+  height: 4em;
+}
+
+.new-detail {
+  width: 90%;
+}
+
+.align-section {
+  vertical-align: top;
+  line-height: 30px;
+  height: 50px;
+
+}
+.done-section {
+  background: $mud;
+  float: right;
+  margin-right: 10%;
+
+}
+
+.less-bottom-padding {
+  margin-bottom: 1%;
+}
+
+.indent {
+  margin-left: 10%;
+}
+
+.outline {
+  padding: 2%;
+  margin: 4% auto;
+  width: 70px;
+  height: 38px;
+  font-size: 1.1em;
+  border-radius: 10%;
+  border: 2px solid $sand;
+}
+
+.wine {
+  color: $wine;
+}
+
+.red {
+  color: $red;
+}
+
+.alert {
+  text-align: center;
+  width: 90%;
+  font-size: 1.3em;
+}
+
+.right-space {
+  margin-right: 1%;
+}
+
+/*Question*/
+.question-section {
+  margin-top: 10%;
+  padding: 3%;
+}
+
+.font1_5 {
+  font-size: 1.5em;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  width: 70px;
+  height: 38px;
+  font-size: 1.1em;
+  background: $wine;
+  border-radius: 10%;
+  border: 2px solid $sand;
+  text-align: center;
+  color: $sand;
+  position: relative;
+}
+
+.btn:hover {
+  background-color: $red;
+}
+
+.center {
+  margin: auto;
+}
+
+input[type=submit].width200 {
+  width: 120px;
+}
+
+.btn-pale {
+  position: absolute;
+  top: 50%;
+  color: $sand;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+input[type=submit].small-font {
+  font-size: .6em;
+}
+
+@media (min-width: 600px) {
+  body {
+    width: 400px;
+    margin: auto;
+  }
+
 }

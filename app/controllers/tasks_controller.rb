@@ -28,7 +28,8 @@ class TasksController < ApplicationController
     @task.update(task_params)
     if params[:task].has_key?(:date_completed)
       helpers.completion_tasks @task
-      redirect_to edit_task_path @task, alert: "Any changes to next due date?"
+      flash[:alert] = "Any changes to make?"
+      redirect_to edit_task_path @task
       return
     end
     redirect_to root_path

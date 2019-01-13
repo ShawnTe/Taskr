@@ -1,24 +1,25 @@
 <h1>Edit <%= @task.title.downcase %></h1>
 
-<% if flash[:alert] %>
-a ntoice in flash
-  <%= flash[:alert] %><br />
-<% end %>
-
 <%= form_for @task, html: {class: "task-form"} do |f| %>
+  <% if flash[:alert] %>
+    <div class="red alert">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
   <br />
 
   <%= f.label :next_due_date %>
-  <%= f.date_field :next_due_date, placeholder: @task.next_due_date || "Click arrow for calendar" %>
+  <%= f.date_field :next_due_date, placeholder: @task.next_due_date %>
+  <br />
   <br />
 
   Do every:
-  <%= f.select :frequency_number, options_for_select((0..31), (@task.frequency_number || 1)) %>
+  <%= f.select :frequency_number, options_for_select((1..31), (@task.frequency_number || 1)) %>
 
   <%= collection_select(:task, :frequency_unit, Frequency.all, :unit, :time_unit ) %>
 
   <br />
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: "btn" %>
 <% end %>

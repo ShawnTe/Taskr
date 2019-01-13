@@ -1,21 +1,24 @@
 <h1><%= @task.title %></h1>
 
-<div class="the-icons">
-  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+<div class="align-section">
+  <div class="inline">
+    <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+    <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
+  </div>
+  <div class="done-section">
+   <%= button_to("Done!", task_path(id: @task.id), class: 'btn mark-done', :method => :patch, params: { task: { date_completed: Time.new}}) %>
+  </div>
+
+  <div class="task-notice">
+    <% if notice.present? %>
+      <%= notice %><br />
+      <% if @task.details.last.todo_type == "SupplyDetail" %>
+        Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
-<div class="the-icons">
-  <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
-</div>
-
-<% if notice.present? %>
-  <%= notice %><br />
-  <% if @task.details.last.todo_type == "SupplyDetail" %>
-    Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
-  <% end %>
-<% end %>
-
- <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
 <br />
 <div>
   Next up: <%= @task.next_due_date.strftime("%B %d, %Y") %><br />
@@ -23,18 +26,20 @@
 </div>
 
 <div>
-    <h2>Last done:</h2>
-    <ul>
-      <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
-        <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
-      <% end %>
-    </ul>
+    <% if @task.task_histories.count > 0 %>
+      <h2 class="less-bottom-padding">Last done:</h2>
+      <ul class="indent">
+        <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
+          <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
+        <% end %>
+      </ul>
+    <% end %>
 </div>
 
-<div>
-  <h2>To Do...</h2>
-  <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id) %>
-  <ul>
+<div class="align-section">
+  <h2 class="inline">Add supply or contact...</h2>
+  <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id), class: "inline" %>
+  <ul class="indent-list">
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
           <li>Get supplies: <%= link_to detail.todo.name, detail_path(detail.id) %></li>

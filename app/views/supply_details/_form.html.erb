@@ -34,9 +34,10 @@
     <div>
     <%= todo_form.label "Link to how to" %>
     <%= todo_form.text_field :how_to_link, placeholder: @detail.todo.try(:how_to_link), value: @detail.todo.try(:how_to_link), required: false %></div>
+    <br />
     <div>
     <%= todo_form.file_field :image %></div>
 
   <% end %>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Submit", class: "btn" %>
 <% end %>

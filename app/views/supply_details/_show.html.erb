@@ -6,7 +6,7 @@
 </div>
 
 <h2>Get</h2>
-<%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
+What: <%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
 <br />
 Brand: <%= @detail.todo.brand %>
 <br />
@@ -17,7 +17,7 @@ Size: <%= @detail.todo.size %>
 <br />
 
 <br />
-From: <%= @detail.todo.source %>
+From where: <%= @detail.todo.source %>
 <br />
 To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_link %>
 <br />

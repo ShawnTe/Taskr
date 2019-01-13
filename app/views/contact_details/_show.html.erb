@@ -1,8 +1,10 @@
 <%= link_to "<< back", @task %>
+<br>
 <div class="the-icons">
   <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id)%>
   <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, detail_path(:detail_id => @detail.id), method: :delete %>
 </div>
+<br>
 
 <div class="the-icons"><i class="demo-icon icon-building"></i>
 <%= @detail.todo.company %><br /></div>
