@@ -3,32 +3,40 @@
   <%= form.fields_for :todo do |todo_form| %>
     <%= hidden_field_tag 'task_id', @task.id %>
 
-    <div class="the-icons"><i class="demo-icon icon-user"></i>
-    <%= todo_form.text_field :name, placeholder: "supply needed" %></div>
+    <div>
+    <%= todo_form.label "Thing to get" %>
+    <%= todo_form.text_field :name, label: "Thing to get", placeholder: @detail.todo.try(:name), value: @detail.todo.try(:name) %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-user"></i>
-    <%= todo_form.text_field :quantity, placeholder: "quantity" %></div>
+    <div>
+    <%= todo_form.label "How many" %>
+    <%= todo_form.text_field :quantity, placeholder: @detail.todo.try(:quantity), value: @detail.todo.try(:quantity), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-globe"></i>
-    <%= todo_form.text_field :size, placeholder: "size" %></div>
+    <div>
+    <%= todo_form.label :size %>
+    <%= todo_form.text_field :size, placeholder: @detail.todo.try(:size), value: @detail.todo.try(:size), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-envelope-open-o"></i>
-    <%= todo_form.text_field :brand, placeholder: "brand" %></div>
+    <div>
+    <%= todo_form.label :brand %>
+    <%= todo_form.text_field :brand, placeholder: @detail.todo.try(:brand), value: @detail.todo.try(:brand), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-volume-control-phone"></i>
-    <%= todo_form.text_field :model, placeholder: "model" %></div>
+    <div>
+    <%= todo_form.label :model %>
+    <%= todo_form.text_field :model, placeholder: @detail.todo.try(:model), value: @detail.todo.try(:model), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-mobile"></i>
-    <%= todo_form.text_field :source, placeholder: "where to get" %></div>
+    <div>
+    <%= todo_form.label "Where to get" %>
+    <%= todo_form.text_field :source, placeholder: @detail.todo.try(:source), value: @detail.todo.try(:source), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-globe"></i>
-    <%= todo_form.text_field :source_link, placeholder: "link to buy" %></div>
+    <div>
+    <%= todo_form.label "Link to buy" %>
+    <%= todo_form.text_field :source_link, placeholder: @detail.todo.try(:source_link), value: @detail.todo.try(:source_link), required: false %></div>
 
-    <div class="the-icons"><i class="demo-icon icon-globe"></i>
-    <%= todo_form.text_field :how_to_link, placeholder: "link to How To" %></div>
-
-    <%= todo_form.file_field :image %>
+    <div>
+    <%= todo_form.label "Link to how to" %>
+    <%= todo_form.text_field :how_to_link, placeholder: @detail.todo.try(:how_to_link), value: @detail.todo.try(:how_to_link), required: false %></div>
+    <div>
+    <%= todo_form.file_field :image %></div>
 
   <% end %>
-  <%= form.submit "Add supply details" %>
+  <%= form.submit "Submit" %>
 <% end %>

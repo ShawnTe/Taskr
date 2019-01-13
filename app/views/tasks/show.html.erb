@@ -4,7 +4,9 @@
   <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
 </div>
 
-<div class="the-icons"><i class="demo-icon icon-trash-empty"></i></div>
+<div class="the-icons">
+  <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
+</div>
 
 <% if notice.present? %>
   <%= notice %><br />
@@ -13,24 +15,20 @@
   <% end %>
 <% end %>
 
-<% if @task.date_completed.nil? %>
  <%= button_to("Mark as Done", task_path(id: @task.id), class: 'btn', :method => :patch, params: { task: { date_completed: Time.new}}) %>
-<% else %>
-  <h2 class="done-task">The Task is Done</h2>
-<% end %>
 <br />
 <div>
-  Next up: <%= @task.first_due_date.strftime("%B %d, %Y") %><br />
+  Next up: <%= @task.next_due_date.strftime("%B %d, %Y") %><br />
   Frequency: every <%= @task.frequency_number %> <%= @task.frequency_unit %>
 </div>
 
 <div>
-  <% if @task.last_date_done %>
     <h2>Last done:</h2>
     <ul>
-      <li><%= @task.last_date_done.strftime("%B %Y") %></li>
+      <% @task.task_histories.order('last_due_date DESC').each do |task_history| %>
+        <li><%= task_history.last_due_date.strftime("%B %Y") %></li>
+      <% end %>
     </ul>
-  <% end %>
 </div>
 
 <div>
@@ -39,16 +37,16 @@
   <ul>
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
-          <li><%= link_to "Get supplies (#{detail.todo.name})", detail_path(detail.id) %></li>
-        <% else %>
+          <li>Get supplies: <%= link_to detail.todo.name, detail_path(detail.id) %></li>
+        <% elsif detail.todo.instance_of? ContactDetail %>
           <% if detail.todo.company.blank? %>
             <% display_name = detail.todo.name %>
           <% else %>
             <% display_name = detail.todo.company %>
           <% end %>
           <li>Make appointment: <%= link_to display_name, detail_path(detail.id)%> </li>
+        <% else %>
         <% end %>
-
     <% end %>
   </ul>
 </div>

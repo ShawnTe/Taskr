@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_29_184546) do
+ActiveRecord::Schema.define(version: 2019_01_05_055957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,16 +77,23 @@ ActiveRecord::Schema.define(version: 2018_12_29_184546) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "task_histories", force: :cascade do |t|
+    t.bigint "task_id"
+    t.date "last_due_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_histories_on_task_id"
+  end
+
   create_table "tasks", force: :cascade do |t|
     t.string "title", null: false
-    t.date "first_due_date"
+    t.date "next_due_date"
     t.text "notes"
     t.string "frequency_unit"
     t.integer "frequency_number"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "last_date_done"
     t.date "date_completed"
   end
 
@@ -99,5 +106,6 @@ ActiveRecord::Schema.define(version: 2018_12_29_184546) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "details", "tasks"
+  add_foreign_key "task_histories", "tasks"
   add_foreign_key "tasks", "users"
 end

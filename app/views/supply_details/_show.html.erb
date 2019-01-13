@@ -1,6 +1,8 @@
 <%= link_to "<< back", @task %>
 <div class="the-icons">
   <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id) %>
+  <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, detail_path(:detail_id => @detail.id), method: :delete %>
+
 </div>
 
 <h2>Get</h2>
@@ -17,9 +19,11 @@ Size: <%= @detail.todo.size %>
 <br />
 From: <%= @detail.todo.source %>
 <br />
-Link to get: <%= @detail.todo.source_link %>
+To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_link %>
 <br />
-Link to how to: <%= @detail.todo.how_to_link %>
+How to: <%= link_to limited_url(@detail.todo.how_to_link), @detail.todo.how_to_link %>
+<br />
+<br />
 
 
 [Need to figure out how to show image!!!]
