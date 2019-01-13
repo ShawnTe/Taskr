@@ -1,9 +1,8 @@
-(function($) {
-  $(function() {
-
-    $(".sticky").click(function(e) {
+  var toggleNav = function() {
+    $('.sticky').on('click', function(e) {
       $('#nav-dropdown').toggleClass('toggle-list');
+      console.log("in function")
     })
+  }
 
-  });
-})(jQuery);
+$(document).ready(toggleNav);

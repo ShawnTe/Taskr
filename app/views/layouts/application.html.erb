@@ -5,8 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -14,15 +14,17 @@
       <nav class="sticky">
         <button class='nav-icon right'><i class="icon-menu"></i></button>
         <ul class="toggle-list" id="nav-dropdown">
-          <li><a href="#!">Link 1</a></li>
-          <li><a href="#!">Link 2</a></li>
-          <li><a href="#!">Link 3</a></li>
+          <li><%= link_to "Dashboard", root_path %></li>
+          <li>
+            <% if signed_in? %>
+              <%= link_to 'Sign out', sign_out_path, method: :delete %>
+            <% end %>
+          </li>
         </ul>
       </nav>
 
       <% if signed_in? %>
         Signed in as: <%= current_user.username %>
-        <%= link_to 'Sign out', sign_out_path, method: :delete %>
       <% else %>
         <%= link_to 'Sign in', sign_in_path %>
       <% end %>
