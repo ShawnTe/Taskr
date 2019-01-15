@@ -1,7 +1,6 @@
 <h1><%= @task.title %></h1>
 
 <div>
-  <div class="center">
     <% if @detail_type == "supply" %>
       <%= render 'supply_details/form' %>
     <% elsif @detail_type == "contact" %>
@@ -17,7 +16,6 @@
         </div>
       </div>
     <% end %>
-  </div>
 </div>
 
 
