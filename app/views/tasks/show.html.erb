@@ -19,9 +19,12 @@
 <br />
 <div>
   Next up: <%= @task.next_due_date.strftime("%B %d, %Y") %><br />
-  Frequency: every <%= @task.frequency_number %> <% if @task.frequency_number < 2 %>
-  <%= @task.frequency_unit.singularize %>
-  <% else %><%= @task.frequency_unit %><% end%>
+  Frequency: every <%= @task.frequency_number %>
+  <% if @task.frequency_number < 2 %>
+    <%= @task.frequency_unit.singularize %>
+  <% else %>
+    <%= @task.frequency_unit %>
+  <% end%>
 
 
 </div>

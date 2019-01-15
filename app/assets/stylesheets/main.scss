@@ -265,11 +265,12 @@ textarea {
 }
 
 .btn {
-  display: inline-block;
+  /*display: inline-block;*/
   margin-top: 6%;
   margin-bottom: 6%;
   width: 70px;
   height: 38px;
+  padding: 3% 6%;
   font-size: 1.1em;
   background: $wine;
   border-radius: 10%;
@@ -285,14 +286,16 @@ textarea {
 
 .center {
   margin: auto;
+  text-align: center;
 }
 
-input[type=submit].width200 {
-  width: 120px;
+.width50 {
+  width: 50%;
+  margin-top: 5%;
 }
 
 .btn-pale {
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   color: $sand;
   -ms-transform: translate(-50%, -50%);
