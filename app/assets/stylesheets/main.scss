@@ -27,6 +27,7 @@ body {
   font-family: Futura;
   color: $sand;
   font-size: 1em;
+  height: 100vh;
 }
 
 #container {
@@ -34,6 +35,14 @@ body {
   border-style: outset;
   padding: 3% 3% 20% 3%;
   margin: auto;
+  height: 100%;
+
+}
+
+#flash {
+  text-align: center;
+  background: $pale_trans;
+  border-radius: 5%;
 }
 
 nav {
@@ -79,7 +88,8 @@ nav {
 
 
 a:link {
-  text-decoration: none;
+  text-decoration: underline;
+  color: $wine;
 }
 
 a:visited {
@@ -156,7 +166,7 @@ input {
 
 input[type=submit] {
   margin: 4% auto;
-  width: 90px;
+  /*width: 90px;*/
   height: 38px;
   font-size: 1.1em;
   background: $wine;
@@ -268,7 +278,7 @@ textarea {
   /*display: inline-block;*/
   margin-top: 6%;
   margin-bottom: 6%;
-  width: 70px;
+  /*width: 70px;*/
   height: 38px;
   padding: 3% 6%;
   font-size: 1.1em;
@@ -308,8 +318,15 @@ input[type=submit].small-font {
 
 @media (min-width: 600px) {
   body {
-    width: 400px;
+    width: 30%;
     margin: auto;
+    height: 100vh;
   }
 
+  .container {
+    width: 30%;
+
+    height: 100%;
+
+  }
 }
