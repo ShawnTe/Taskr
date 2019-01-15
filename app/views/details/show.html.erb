@@ -7,4 +7,4 @@
 <% end %>
 
 
- <%= button_to("[Check for due]", {:controller => "details", :action => "check_date", :detail_id => @detail.id, :task_id=> @task.id}, class: "width200 small-font", :method=>:get) %>
+ <%= button_to("[due?]", {:controller => "details", :action => "check_date", :detail_id => @detail.id, :task_id=> @task.id}, class: "width200 small-font", :method=>:get) %>

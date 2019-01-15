@@ -16,11 +16,18 @@ $sand: rgba(214, 205, 182, 1);
 $mud: rgba(141, 119, 95, 1);
 $mud_trans: rgba(141, 119, 95, .5);
 
+$content-width: 400px;
+/*$breakpoint: 799px;*/
+$nav-height: 70px;
+$nav-background: $mud_trans;
+$nav-font-color: $wine;
+$link-hover-color: $red;
 
 body {
   font-family: Futura;
   color: $sand;
   font-size: 1em;
+  height: 100vh;
 }
 
 #container {
@@ -28,6 +35,45 @@ body {
   border-style: outset;
   padding: 3% 3% 20% 3%;
   margin: auto;
+  height: 100%;
+
+}
+
+#flash {
+  text-align: center;
+  background: $pale_trans;
+  border-radius: 5%;
+}
+
+nav {
+  float: right;
+    z-index: 99;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      /*position: relative;*/
+      a {
+        min-width: 50%;
+        float: left;
+        display: block;
+        padding: 0 2.5em;
+        line-height: 2.5em;
+        background: $pale;
+        color: $wine;
+        text-decoration: none;
+      } //dropdown
+      ul li {
+        a {
+        }
+      }
+    }
+  }
+}
+
+.toggle-list {
+  display: none;
 }
 
 #flash {
@@ -42,7 +88,8 @@ body {
 
 
 a:link {
-  text-decoration: none;
+  text-decoration: underline;
+  color: $wine;
 }
 
 a:visited {
@@ -119,7 +166,7 @@ input {
 
 input[type=submit] {
   margin: 4% auto;
-  width: 90px;
+  /*width: 90px;*/
   height: 38px;
   font-size: 1.1em;
   background: $wine;
@@ -133,6 +180,10 @@ form.button_to {
   padding: 0;
 }
 
+button {
+  padding: 0;
+  margin: auto;
+}
 
 input[type=submit].mark-done {
   border: 3px solid $pale;
@@ -224,11 +275,12 @@ textarea {
 }
 
 .btn {
-  display: inline-block;
+  /*display: inline-block;*/
   margin-top: 6%;
   margin-bottom: 6%;
-  width: 70px;
+  /*width: 70px;*/
   height: 38px;
+  padding: 3% 6%;
   font-size: 1.1em;
   background: $wine;
   border-radius: 10%;
@@ -244,14 +296,16 @@ textarea {
 
 .center {
   margin: auto;
+  text-align: center;
 }
 
-input[type=submit].width200 {
-  width: 120px;
+.width50 {
+  width: 50%;
+  margin-top: 5%;
 }
 
 .btn-pale {
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   color: $sand;
   -ms-transform: translate(-50%, -50%);
@@ -264,8 +318,15 @@ input[type=submit].small-font {
 
 @media (min-width: 600px) {
   body {
-    width: 400px;
+    width: 30%;
     margin: auto;
+    height: 100vh;
   }
 
+  .container {
+    width: 30%;
+
+    height: 100%;
+
+  }
 }

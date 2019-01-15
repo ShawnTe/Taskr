@@ -1,13 +1,10 @@
 <div class="question-section">
   <div class="font1_5">
-    Q:<br />Will someone else do the task?
+    Will someone else do the task?
   </div>
 
- <div class="center width200">
-    <div class="btn">
+ <div class="center width50">
     <%= link_to 'YES', new_detail_path(:task_id => @task.id, :detail_type => "contact"), class: "btn-pale btn" %>
-    </div>
-    <div class="btn">
       <%= link_to 'NO', @task, class: "btn-pale btn" %>
   </div>
 </div>

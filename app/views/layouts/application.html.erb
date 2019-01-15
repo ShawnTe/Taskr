@@ -5,19 +5,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <div id="container">
-      <nav class="sticky">
-        <%= link_to '<i class="icon-menu"></i>'.html_safe, root_path, class: 'nav-icon right' %>
-      </nav>
+      <% if signed_in? %>
+        <nav class="sticky">
+          <button class='nav-icon right'><i class="icon-menu"></i></button>
+          <ul class="toggle-list" id="nav-dropdown">
+            <li><%= link_to "Dashboard", root_path %></li>
+            <li>
+                <%= link_to 'Sign out', sign_out_path, method: :delete %>
+            </li>
+          </ul>
+        </nav>
+      <% end %>
 
       <% if signed_in? %>
-        Signed in as: <%= current_user.username %>
-        <%= link_to 'Sign out', sign_out_path, method: :delete %>
+        Hi <%= current_user.username %>!
       <% else %>
         <%= link_to 'Sign in', sign_in_path %>
       <% end %>

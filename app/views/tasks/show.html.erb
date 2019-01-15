@@ -8,18 +8,19 @@
   <div class="done-section">
    <%= button_to("Done!", task_path(id: @task.id), class: 'btn mark-done', :method => :patch, params: { task: { date_completed: Time.new}}) %>
   </div>
-
-  <div class="task-notice">
-    <% if @task.details.last.todo_type == "SupplyDetail" %>
-      Do you have a <%= link_to "contractor", new_detail_path(:task_id => @task.id, :detail_type => "contact") %> to add?
-    <% end %>
-  </div>
 </div>
 
 <br />
 <div>
   Next up: <%= @task.next_due_date.strftime("%B %d, %Y") %><br />
-  Frequency: every <%= @task.frequency_number %> <%= @task.frequency_unit %>
+  Frequency: every <%= @task.frequency_number %>
+  <% if @task.frequency_number < 2 %>
+    <%= @task.frequency_unit.singularize %>
+  <% else %>
+    <%= @task.frequency_unit %>
+  <% end%>
+
+
 </div>
 
 <div>
@@ -34,7 +35,7 @@
 </div>
 
 <div class="align-section">
-  <h2 class="inline">Todos...</h2>
+  <h2 class="inline">Supplies & Contacts...</h2>
   <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id), class: "inline" %>
   <ul class="indent-list">
       <% @task.details.each do |detail| %>
