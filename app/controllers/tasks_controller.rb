@@ -9,6 +9,9 @@ class TasksController < ApplicationController
     user = User.last
     @task = user.tasks.build(task_params)
   if @task.save
+      p "*******************************"
+      p "In if statment of create action"
+      p "*******************************"
       render "add_supply"
     else
       @error_message = "Task not saved. Did you enter a title and due date?"

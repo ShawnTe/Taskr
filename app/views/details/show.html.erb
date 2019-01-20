@@ -6,5 +6,6 @@
   <%= render 'contact_details/show' %>
 <% end %>
 
-
- <%= button_to("[due?]", {:controller => "details", :action => "check_date", :detail_id => @detail.id, :task_id=> @task.id}, class: "width200 small-font", :method=>:get) %>
+<div class="drop-down">
+ <%= button_to("[due?]", {:controller => "details", :action => "check_date", :detail_id => @detail.id, :task_id=> @task.id}, class: "small-font btn btn-pale", :method=>:get) %>
+</div>

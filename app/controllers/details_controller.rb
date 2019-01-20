@@ -11,6 +11,10 @@ class DetailsController < ApplicationController
   def create
     task = Task.find(params[:task_id])
     detail = task.details.create(detail_params)
+    p "*******************************"
+    p "IN detail controller create action"
+    p "*******************************"
+
     redirect_to task_path(task), redirect_options_for(detail)
   end
 
