@@ -190,12 +190,16 @@ button {
 }
 
 input[type=submit].mark-done {
-  border: 3px solid $pale;
-  height: 80px;
-  width: 80px;
+  border: 2px solid $pale;
+  height: 4em;
+  width: 4em;
+  font-size: .9em;
   border-radius: 50%;
   margin-top: -10px;
-  padding: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 5%;
+  float: none;
 }
 
 textarea {
@@ -279,7 +283,6 @@ textarea {
 }
 
 .btn {
-  /*display: inline-block;*/
   margin-top: 6%;
   margin-bottom: 6%;
   width: 36%;
@@ -309,7 +312,6 @@ textarea {
 }
 
 .btn-pale {
-  /*position: absolute;*/
   top: 50%;
   color: $sand;
   -ms-transform: translate(-50%, -50%);
@@ -323,6 +325,7 @@ input[type=submit].small-font {
 .drop-down {
   margin-top: 400px;
 }
+
 
 @media (min-width: 600px) {
   body {
