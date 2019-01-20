@@ -27,7 +27,7 @@ body {
   font-family: Futura;
   color: $sand;
   font-size: 1em;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #container {
@@ -90,6 +90,11 @@ nav {
 a:link {
   text-decoration: underline;
   color: $wine;
+}
+
+.btn:link {
+  text-decoration: none;
+  color: $sand;
 }
 
 a:visited {
@@ -278,10 +283,10 @@ textarea {
   /*display: inline-block;*/
   margin-top: 6%;
   margin-bottom: 6%;
-  /*width: 70px;*/
+  width: 36%;
   height: 38px;
-  padding: 3% 6%;
-  font-size: 1.1em;
+  padding: 2% 4%;
+  font-size: .9em;
   background: $wine;
   border-radius: 10%;
   border: 2px solid $sand;
@@ -300,7 +305,7 @@ textarea {
 }
 
 .width50 {
-  width: 50%;
+  width: 80%;
   margin-top: 5%;
 }
 
@@ -320,7 +325,7 @@ input[type=submit].small-font {
   body {
     width: 30%;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .container {
