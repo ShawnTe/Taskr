@@ -13,8 +13,8 @@ $red: rgba(167, 29, 49, 1);
 $pale: rgba(241, 240, 204, 1);
 $pale_trans: rgba(241, 240, 204, .5);
 $sand: rgba(214, 205, 182, 1);
-$mud: rgba(141, 119, 95, 1);
-$mud_trans: rgba(141, 119, 95, .5);
+$mud: rgba(161, 143, 124, 1);
+$mud_trans: rgba(161, 143, 124, .5);
 
 $content-width: 400px;
 /*$breakpoint: 799px;*/
@@ -69,6 +69,11 @@ nav {
       }
     }
   }
+}
+
+select {
+  color: $wine;
+  font-size: .8em;
 }
 
 .toggle-list {
@@ -166,6 +171,7 @@ input {
   padding: 3px;
   height: 1.5em;
   font-size: 1em;
+  color: $wine;
 }
 
 input[type=submit] {

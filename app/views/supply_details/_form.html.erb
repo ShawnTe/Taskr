@@ -29,11 +29,11 @@
 
     <div>
     <%= todo_form.label "Link to buy" %>
-    <%= todo_form.text_field :source_link, placeholder: @detail.todo.try(:source_link), value: @detail.todo.try(:source_link), required: false %></div>
+    <%= todo_form.url_field :source_link, placeholder: @detail.todo.try(:source_link), value: @detail.todo.try(:source_link), required: false %></div>
 
     <div>
     <%= todo_form.label "Link to how to" %>
-    <%= todo_form.text_field :how_to_link, placeholder: @detail.todo.try(:how_to_link), value: @detail.todo.try(:how_to_link), required: false %></div>
+    <%= todo_form.url_field :how_to_link, placeholder: @detail.todo.try(:how_to_link), value: @detail.todo.try(:how_to_link), required: false %></div>
     <br />
 
   <% end %>

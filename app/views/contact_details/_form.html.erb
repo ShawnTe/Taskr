@@ -14,19 +14,19 @@
     </div>
     <div>
         <%= todo_form.label "Url" %>
-        <%= todo_form.text_field :url, placeholder: @detail.todo.try(:url), value: @detail.todo.try(:url), required: false %>
+        <%= todo_form.url_field :url, placeholder: @detail.todo.try(:url), value: @detail.todo.try(:url), required: false %>
     </div>
     <div>
         <%= todo_form.label "Email" %>
-        <%= todo_form.text_field :email, placeholder: @detail.todo.try(:email), value: @detail.todo.try(:email), required: false %>
+        <%= todo_form.email_field :email, placeholder: @detail.todo.try(:email), value: @detail.todo.try(:email), required: false %>
     </div>
     <div>
         <%= todo_form.label "Landline" %>
-        <%= todo_form.text_field :work_phone, placeholder: @detail.todo.try(:work_phone), value: @detail.todo.try(:work_phone), required: false %>
+        <%= todo_form.telephone_field :work_phone, placeholder: @detail.todo.try(:work_phone), value: @detail.todo.try(:work_phone), required: false %>
     </div>
     <div>
         <%= todo_form.label "Mobile" %>
-        <%= todo_form.text_field :mobile_phone, placeholder: @detail.todo.try(:mobile_phone), value: @detail.todo.try(:mobile_phone), required: false %>
+        <%= todo_form.telephone_field :mobile_phone, placeholder: @detail.todo.try(:mobile_phone), value: @detail.todo.try(:mobile_phone), required: false %>
     </div>
     <div>
         <%= todo_form.label "Notes" %>
