@@ -1,20 +1,3 @@
 <h1>Edit <%= @task.title.downcase %></h1>
 
-<%= form_for @task, html: {class: "task-form"} do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
-  <br />
-
-  <%= f.label :next_due_date %>
-  <%= f.date_field :next_due_date, placeholder: @task.next_due_date %>
-  <br />
-  <br />
-
-  Do every:
-  <%= f.select :frequency_number, options_for_select((1..31), (@task.frequency_number || 1)) %>
-
-  <%= collection_select(:task, :frequency_unit, Frequency.all, :unit, :time_unit ) %>
-
-  <br />
-  <%= f.submit "Submit" %>
-<% end %>
+<%= render 'form' %>

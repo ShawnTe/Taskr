@@ -1,0 +1,20 @@
+<%= form_for @task, html: {class: "new-form"} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
+  <br />
+
+  <%= f.label :next_due_date %>
+  <%= f.date_field :next_due_date, placeholder: @task.next_due_date %>
+
+  <br />
+  <br />
+
+  Do every:
+  <%= f.select :frequency_number, (1..31) %>
+
+  <%= f.select :frequency_unit, Frequency.all.collect { |u| u.unit }, include_blank: false %>
+
+
+  <%= f.submit "Save" %>
+<% end %>
+
