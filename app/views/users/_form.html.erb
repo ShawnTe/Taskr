@@ -5,8 +5,8 @@
 </div>
 
 <div class="text-field">
-  <%= form.label "Text number" %>
-  <%= telephone_field(:user, :text_number) %>
+  <%= form.label "Number that we will send your text reminders to" %>
+  <%= telephone_field(:user, :text_number, options = { require: true }) %>
 </div>
 
 <div class="text-field">
