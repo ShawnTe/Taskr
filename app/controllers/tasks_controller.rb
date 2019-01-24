@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    user = User.last
+    user = current_user
     @task = user.tasks.build(task_params)
   if @task.save
       p "*******************************"
