@@ -1,0 +1,16 @@
+<%= form_for @user do |form| %>
+    <div>
+        <%= form.label "Username" %>
+        <%= form.text_field :username, placeholder: @user.try(:username), value: @user.try(:username), required: false %>
+    </div>
+    <div>
+        <%= form.label "Text number" %>
+        <%= form.text_field :text_number, placeholder: @user.text_number.try(:text_number), value: @user.try(:text_number), required: false %>
+    </div>
+    <div>
+        <%= form.label "Email" %>
+        <%= form.text_field :email, placeholder: @user.email.try(:email), value: @user.try(:email), required: false %>
+    </div>
+    <%= form.submit "Submit" %>
+
+<% end %>

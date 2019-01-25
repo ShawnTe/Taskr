@@ -1,0 +1,27 @@
+<h1>Profile</h1>
+<div class="">
+  <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_user_path(:userid => @user.id)%>
+</div>
+<br>
+
+<div class=""><i class="icon-user"></i>
+<%= @user.username %><br /></div>
+
+<div class=""><i class="icon-mobile"></i>
+  <% unless @user.text_number.blank? %>
+    <%= link_to @user.text_number, "tel:#{@user.text_number}" %>
+  <% end %>
+</div>
+
+<div class=""><i class="icon-envelope-open-o"></i>
+<%= @user.email %><br /></div>
+
+
+
+
+(change password)
+
+
+<br />
+
+<%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, user_path(:userid => @user.id), method: :delete %>
