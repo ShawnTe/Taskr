@@ -5,6 +5,14 @@ class UsersController < Clearance::UsersController
     render 'sessions/new'
   end
 
+  def show
+    @user = current_user
+  end
+
+  def edit
+    @user = current_user
+  end
+
 private
 
   def user_from_params
