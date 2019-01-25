@@ -13,6 +13,13 @@ class UsersController < Clearance::UsersController
     @user = current_user
   end
 
+  def update
+    user = current_user
+    user.update(user_params)
+
+    redirect_to user
+  end
+
 private
 
   def user_from_params
@@ -27,6 +34,10 @@ private
       user.email = email
       user.password = password
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :text_number, :email)
   end
 
 end
