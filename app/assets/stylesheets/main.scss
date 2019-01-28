@@ -42,6 +42,7 @@ body {
   text-align: center;
   background: $pale_trans;
   border-radius: 5%;
+  color: $red;
 }
 
 nav {
@@ -78,10 +79,6 @@ select {
 
 .toggle-list {
   display: none;
-}
-
-#flash {
-  color: $red;
 }
 
 .sticky {
@@ -141,10 +138,6 @@ li.upcoming-item {
   font-size: 1.6em;
 }
 
-.wine {
-  color: $wine;
-}
-
 /*Forms*/
 .form-header {
   background: $mud;
@@ -162,7 +155,7 @@ label {
   float: left;
 }
 
-label:after { content: ": " }
+/*label:after { content: ": " }*/
 
 input {
   border: 2px solid $mud;

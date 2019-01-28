@@ -1,6 +1,14 @@
 <div id="clearance" class="sign-up">
   <h2><%= t(".title") %></h2>
 
+<label class="red">
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+    <%= message %>.<br />
+   <% end %>
+  <% end %>
+</label>
+
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
