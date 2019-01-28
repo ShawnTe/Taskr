@@ -7,7 +7,7 @@ module MessagesHelper
     p "Task url in build_messages: " + task_url
     message = "Time to #{task.title}.\n\n"
     if task.task_histories.any?
-      message += "Last time done was:\n#{task.task_histories.last.strftime("%B %Y")}\n\n"
+      message += "Last time done was:\n#{task.task_histories.last.last_due_date.strftime("%B %Y")}\n\n"
     end
     message += "Goto todos: " + task_url
     message
