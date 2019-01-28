@@ -45,7 +45,7 @@ class DetailsController < ApplicationController
     p params
     @detail = Detail.find(params[:detail_id])
     @task = Task.find(@detail.task_id)
-    helpers.check_due_date(@task)
+    helpers.check_due_date(@task, current_user)
     redirect_to @detail
   end
 
