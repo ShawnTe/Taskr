@@ -7,11 +7,11 @@ class TwilioTextMessenger
 
   def send_message
     client = Twilio::REST::Client.new(
-      Rails.application.credentials.twilio[:twilio_account_sid],
-      Rails.application.credentials.twilio[:twilio_auth_token]
+      ENV["twilio_account_sid"],
+      ENV["twilio_auth_token"]
       )
     client.messages.create({
-      from: Rails.application.credentials.twilio[:twilio_phone_number],
+      from: ENV["twilio_phone_number"],
       to: current_user.text_number,
       body: @message
     })
