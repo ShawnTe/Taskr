@@ -218,8 +218,13 @@ textarea {
   vertical-align: top;
   line-height: 30px;
   height: 50px;
-
 }
+
+.bottom-section {
+  margin-top: 10%
+  line-height: 30px;
+}
+
 .done-section {
   background: $mud;
   float: right;
