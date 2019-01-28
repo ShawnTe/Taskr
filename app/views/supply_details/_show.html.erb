@@ -1,8 +1,6 @@
 <%= link_to "<< back", @task %>
 <div class="the-icons">
   <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_detail_path(:detail_id => @detail.id) %>
-  <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, detail_path(:detail_id => @detail.id), method: :delete %>
-
 </div>
 
 <h2>Get</h2>
@@ -23,4 +21,8 @@ To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_l
 <br />
 How to: <%= link_to limited_url(@detail.todo.how_to_link), @detail.todo.how_to_link %>
 <br />
-<br />
+<div class="bottom-section">
+  <div>
+    <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, detail_path(:detail_id => @detail.id), method: :delete %>
+  </div>
+</div>
