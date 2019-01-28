@@ -12,7 +12,7 @@ class TwilioTextMessenger
       )
     client.messages.create({
       from: Rails.application.credentials.twilio[:twilio_phone_number],
-      to: "+15304703493",
+      to: current_user.text_number,
       body: @message
     })
   end
