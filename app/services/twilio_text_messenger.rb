@@ -23,7 +23,7 @@ class TwilioTextMessenger
       ENV["twilio_auth_token"]
       )
     client.messages.create({
-      from: "ENV["twilio_phone_number"]",
+      from: ENV["twilio_phone_number"],
       to: user.text_number,
       body: @message
     })
