@@ -26,7 +26,7 @@ module ApplicationHelper
         )
     else
       p "*******************************"
-      p "task history entry not created"
+      p "task history entry NOT created"
       p "*******************************"
 
     end

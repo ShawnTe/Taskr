@@ -18,7 +18,7 @@ module MessagesHelper
 
     if today >= task.next_due_date - 14
       message = build_message(task)
-      p "Status: Fake text sent. *****************"
+      p "Status: Sending text. *****************"
       TwilioTextMessenger.new(message).send_message(user)
     else
       p "Status: next_due_date is greater than two weeks away. No text sent."
