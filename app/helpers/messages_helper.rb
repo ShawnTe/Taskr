@@ -2,7 +2,7 @@ module MessagesHelper
   require 'date'
 
   def build_message(task)
-    host = "https://powerful-sands-71729.herokuapp.com/"
+    host = "https://remember-2-due.herokuapp.com/"
     task_url = host + "tasks/#{task.id}"
     p "Task url in build_messages: " + task_url
     message = "Time to #{task.title}.\n\n"
