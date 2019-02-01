@@ -27,7 +27,7 @@ def check_due_dates
     tasks.each do |task|
       if (today - task.next_due_date) < 0
         puts "Not yet due"
-      elsif (task.next_due_date - today) <= 0
+      elsif (task.next_due_date - today) == 0
         # due today, add to hash
         if !qualified_tasks.key?(task.user_id)
           qualified_tasks[task.user_id] = [task]
