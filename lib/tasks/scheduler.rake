@@ -59,7 +59,7 @@ def check_due_dates
 
       tasks.each do |task|
         # if one task
-        host = "https://remember-2-due.herokuapp.com/"
+        host = "https://powerful-sands-71729.herokuapp.com/"
         goto_url = ""
         if tasks.count < 2
           goto_url = host + "tasks/#{task.id}"
