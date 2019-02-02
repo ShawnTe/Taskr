@@ -6,22 +6,22 @@
 <h2>Get...</h2>
 What: <%= @detail.todo.quantity %> <%= @detail.todo.name.capitalize %>
 <br />
+Size: <%= @detail.todo.size %>
+<br />
 Brand: <%= @detail.todo.brand %>
 <br />
 Model: <%= @detail.todo.model %>
 
 <br />
-Size: <%= @detail.todo.size %>
-<br />
-
 <br />
 From where: <%= @detail.todo.source %>
 <br />
 To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_link %>
 <br />
+<br />
 How to: <%= link_to limited_url(@detail.todo.how_to_link), @detail.todo.how_to_link %>
 <br />
-Notes: <%= @detail.todo.notes %>
+Notes: <%= @detail.todo.supply_notes %>
 <br />
 <div class="bottom-section">
   <div>

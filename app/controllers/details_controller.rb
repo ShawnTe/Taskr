@@ -91,14 +91,14 @@ class DetailsController < ApplicationController
   end
 
   def supply_detail_todo_params
-    params.require(:detail).require(:todo).permit(:name, :size, :quantity, :brand, :model, :source, :source_link, :how_to_link, :image, :notes)
+    params.require(:detail).require(:todo).permit(:name, :size, :quantity, :brand, :model, :source, :source_link, :how_to_link, :image, :supply_notes)
   end
 
   def redirect_options_for(detail)
     if detail.persisted?
-      { notice: "Task todo created successfully." }
+      { notice: "Todo created successfully." }
     else
-      { alert: "Task todo not saved" }
+      { alert: "Todo not saved" }
     end
   end
 

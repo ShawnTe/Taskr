@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_02_174141) do
+ActiveRecord::Schema.define(version: 2019_02_02_211325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_02_02_174141) do
     t.string "how_to_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "notes"
+    t.text "supply_notes"
   end
 
   create_table "task_histories", force: :cascade do |t|
