@@ -21,6 +21,8 @@ To get: <%= link_to limited_url(@detail.todo.source_link), @detail.todo.source_l
 <br />
 How to: <%= link_to limited_url(@detail.todo.how_to_link), @detail.todo.how_to_link %>
 <br />
+Notes: <%= @detail.todo.notes %>
+<br />
 <div class="bottom-section">
   <div>
     <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, detail_path(:detail_id => @detail.id), method: :delete %>

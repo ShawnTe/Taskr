@@ -12,7 +12,7 @@ class DetailsController < ApplicationController
     task = Task.find(params[:task_id])
     detail = task.details.create(detail_params)
     p "*******************************"
-    p "IN detail controller create action"
+    p "In detail controller create action"
     p "*******************************"
 
     redirect_to task_path(task), redirect_options_for(detail)
@@ -91,7 +91,7 @@ class DetailsController < ApplicationController
   end
 
   def supply_detail_todo_params
-    params.require(:detail).require(:todo).permit(:name, :size, :quantity, :brand, :model, :source, :source_link, :how_to_link, :image)
+    params.require(:detail).require(:todo).permit(:name, :size, :quantity, :brand, :model, :source, :source_link, :how_to_link, :image, :notes)
   end
 
   def redirect_options_for(detail)
