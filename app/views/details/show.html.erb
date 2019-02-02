@@ -5,7 +5,3 @@
 <% elsif @detail.todo_type == "ContactDetail" %>
   <%= render 'contact_details/show' %>
 <% end %>
-
-<div class="drop-down">
- <%= button_to("[due?]", {:controller => "details", :action => "check_date", :detail_id => @detail.id, :task_id=> @task.id}, class: "small-font btn btn-pale", :method=>:get) %>
-</div>

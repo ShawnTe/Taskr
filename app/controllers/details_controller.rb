@@ -41,15 +41,6 @@ class DetailsController < ApplicationController
     redirect_to task
   end
 
-  def check_date
-    Task.check_due_dates
-    # p params
-    @detail = Detail.find(params[:detail_id])
-    # @task = Task.find(@detail.task_id)
-    # helpers.check_due_date(@task, current_user)
-    redirect_to @detail
-  end
-
   def destroy
     detail = Detail.find(params[:id])
     task = Task.find(detail.task_id)
