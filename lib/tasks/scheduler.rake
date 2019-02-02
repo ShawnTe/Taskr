@@ -37,8 +37,6 @@ def single_message_to_send
 end
 
 
-
-
 def check_due_dates
     today = Date.today
     qualified_tasks = {}
