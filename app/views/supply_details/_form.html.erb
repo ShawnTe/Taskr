@@ -34,6 +34,10 @@
     <div>
     <%= todo_form.label "Link to how to" %>
     <%= todo_form.url_field :how_to_link, placeholder: @detail.todo.try(:how_to_link), value: @detail.todo.try(:how_to_link), required: false %></div>
+
+    <div>
+    <%= todo_form.label "Notes" %>
+    <%= todo_form.text_area :notes, placeholder: @detail.todo.try(:notes), value: @detail.todo.try(:notes), required: false %></div>
     <br />
 
   <% end %>
