@@ -25,7 +25,7 @@ $link-hover-color: $red;
 
 body {
   font-family: Futura;
-  color: $sand;
+  color: $pale;
   font-size: 1em;
 }
 
@@ -102,7 +102,6 @@ header {
 
 
 a:link {
-  text-decoration: underline;
   color: $wine;
 }
 
@@ -113,6 +112,7 @@ a:link {
 
 a:visited {
   text-decoration: none;
+  color: $wine;
 }
 
 a:hover {
