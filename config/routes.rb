@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
+  get "/pages/:page" => "pages#show"
 
   constraints Clearance::Constraints::SignedIn.new do
     root to: "dashboards#show", as: :signed_in_root
