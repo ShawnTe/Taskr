@@ -11,8 +11,12 @@
       <ul>
           <% @tasks.each do |task| %>
               <%= link_to "<li class='upcoming-item task-title'>#{task.title.capitalize}</li>".html_safe, task_path(task.id) %>
-              <span class="wine"><em>next due:</em> <%= task.next_due_date.strftime("%B %d, %Y") %></span>
-
+              <em>next due:</em>
+              <% if task.next_due_date < (Time.now + 1.day) %>
+                <span class="red"><%= task.next_due_date.strftime("%B %d, %Y") %></span>
+              <% else %>
+                <span class=""><%= task.next_due_date.strftime("%B %d, %Y") %></span>
+              <% end %>
           <% end %>
       </ul>
     <% else %>
