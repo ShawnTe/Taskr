@@ -28,8 +28,21 @@ FactoryBot.define do
     supply_notes { "These are notes specific to the supply" }
   end
 
+  factory :contact_detail do
+    company  { "The Big Store" }
+    name { "Jane" }
+    url { "http://www.BigStore.com/hdfk5l4k5j" }
+    notes { "Schedule 2 weeks out." }
+    email { "jane@bigstore.com" }
+  end
+
   factory :detail do
     association :todo, factory: :supply_detail
+    task
+  end
+
+  factory :detail_with_contact do
+    association :todo, factory: :contact_detail
     task
   end
 

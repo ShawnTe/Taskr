@@ -21,6 +21,14 @@ RSpec.describe Task, type: :model do
     expect(task).to_not be_valid
   end
 
+  context "executes methods correctly" do
+    context "self.incomplete" do
+      pending "collects tasks where date_completed is nil"
+
+      pending "collects tasks where date_completed is blank"
+    end
+  end
+
 end
 
 

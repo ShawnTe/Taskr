@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Detail, type: :model do
 
-  it "has a valid factory" do
+  it "has a valid factory for supply detail" do
     expect(build(:detail)).to be_valid
   end
 
