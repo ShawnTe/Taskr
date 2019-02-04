@@ -13,6 +13,8 @@ $red: rgba(167, 29, 49, 1);
 $pale: rgba(241, 240, 204, 1);
 $pale_trans: rgba(241, 240, 204, .5);
 $sand: rgba(227, 221, 206, 1);
+$sand_trans: rgba(227, 221, 206, .9);
+
 $mud: rgba(161, 143, 124, 1);
 $mud_trans: rgba(161, 143, 124, .5);
 
@@ -52,6 +54,9 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    position: absolute;
+    right: 0;
+    top: 2.5em;
     li {
       /*position: relative;*/
       a {
@@ -60,7 +65,7 @@ nav {
         display: block;
         padding: 0 2.5em;
         line-height: 2.5em;
-        background: $pale;
+        background: $sand_trans;
         color: $wine;
         text-decoration: none;
       } //dropdown
