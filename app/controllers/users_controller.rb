@@ -1,4 +1,5 @@
 class UsersController < Clearance::UsersController
+  before_action :require_login
 
   # def new
   #   @user = user_from_params
