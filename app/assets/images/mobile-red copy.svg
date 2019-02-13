@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg4801"
+   width="34.423473"
+   height="48.433468"
+   viewBox="0 0 34.423474 48.43347"
+   sodipodi:docname="mobile-red.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata4807">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4805">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14388"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path14385"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt"
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="838"
+     inkscape:window-height="658"
+     id="namedview4803"
+     showgrid="false"
+     inkscape:zoom="2.4215799"
+     inkscape:cx="21.968484"
+     inkscape:cy="8.3501986"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4801"
+     inkscape:object-nodes="false"
+     inkscape:snap-nodes="false"
+     inkscape:snap-global="false"
+     inkscape:pagecheckerboard="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="g14327"
+     transform="matrix(1.1061582,0,0,1.2439399,-536.58185,-718.12022)"
+     style="fill:#a71d31;fill-opacity:1">
+    <path
+       style="fill:#a71d31;stroke-width:0.56305337;fill-opacity:1"
+       d="M 16.544922 0 C 7.6692264 0.0095312279 1.9656155 0.84143547 1.0078125 2.3144531 C 0.38209199 3.276765 -0.10886531 19.6833 0.021484375 35.273438 C 0.056007572 39.404288 -0.063083235 43.538371 0.57421875 47.625 L 3.8867188 47.734375 L 15.330078 47.808594 C 19.619339 47.841123 25.860776 49.490364 30.765625 47.294922 C 32.807095 45.543865 31.800887 45.216324 32.630859 25.6875 C 32.923958 18.791097 33.52099 10.630441 33.958984 7.5527344 C 34.84192 1.3484349 34.58361 0.308854 32.144531 0.29492188 C 31.378716 0.29051833 26.155957 0.17904361 20.539062 0.046875 C 19.146261 0.014101848 17.812878 -0.001361604 16.544922 0 z M 13.876953 4.6035156 C 18.831391 4.5976057 24.089441 5.2038028 28.134766 5.0703125 C 29.23107 6.5966213 27.74852 37.606953 26.654297 38.851562 C 19.232363 40.033878 11.667697 38.990231 4.6484375 39.634766 L 4.8496094 26.738281 C 5.0655536 12.851235 4.0281897 6.6777919 5.6132812 5.5664062 C 8.0409196 4.8312191 10.90429 4.6070616 13.876953 4.6035156 z "
+       transform="matrix(0.90402982,0,0,0.80389736,485.08599,577.29495)"
+       id="path13485" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="add"
+     style="display:none"
+     transform="translate(-252.89077,-747.9295)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="trash"
+     style="display:none"
+     transform="translate(-252.89077,-747.9295)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="trash 1"
+     style="display:none"
+     transform="translate(-252.89077,-747.9295)" />
+</svg>

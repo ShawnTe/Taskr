@@ -13,7 +13,7 @@
     <div id="container">
       <% if signed_in? %>
         <nav class="sticky">
-          <button class='nav-icon right'><i class="icon-menu"></i></button>
+          <%=image_tag("menu-wine.svg", :alt =>  "menu-icon", :height => 30, :class => "img-responsive") %>
           <ul class="toggle-list" id="nav-dropdown">
             <li><%= link_to "Dashboard", root_path %></li>
             <li><%= link_to "Profile", user_path(current_user) %></li>
