@@ -2,7 +2,7 @@
 
 <div class="align-section">
   <div class="inline">
-    <%= link_to '<i class="the-icons icon-edit"></i>'.html_safe, edit_task_path(:task_id => @task.id) %>
+    <%= link_to image_tag("edit-wine.svg", :alt =>  "edit-icon", :height => 30, :class => "img-responsive"), edit_task_path(:task_id => @task.id) %>
   </div>
   <div class="done-section">
    <%= button_to("Done!", task_path(id: @task.id), class: 'btn mark-done', :method => :patch, params: { task: { date_completed: Time.new}}) %>
@@ -35,7 +35,7 @@
 
 <div class="align-section">
   <h2 class="inline">Supplies & Contacts...</h2>
-  <%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_detail_path(:task_id => @task.id), class: "inline" %>
+  <%= link_to image_tag("add-wine.svg", :alt =>  "add-icon", :height => 30, :class => "img-responsive"), new_detail_path(:task_id => @task.id), class: "inline" %>
   <ul class="indent-list">
       <% @task.details.each do |detail| %>
         <% if detail.todo.instance_of? SupplyDetail %>
@@ -53,9 +53,5 @@
   </ul>
 </div>
 
-<div class="bottom-section">
-  <div>
-    <%= link_to '<i class="the-icons icon-trash-empty"></i>'.html_safe, task_path, method: :delete %>
-  </div>
-</div>
+
 

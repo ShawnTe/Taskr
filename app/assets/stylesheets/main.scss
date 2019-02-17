@@ -77,6 +77,16 @@ nav {
   }
 }
 
+.img-responsive {
+    background-color: $mud;
+     /*background-image: url("add-wine.svg");*/
+}
+.img-responsive:active{
+    /*height: 30;*/
+    /*background-image: url("add-red.svg");*/
+    background-color: $red;
+}
+
 select {
   color: $wine;
   font-size: 1em;
@@ -117,7 +127,7 @@ a:link {
 
 a:visited {
   text-decoration: none;
-  color: $wine;
+  /*color: $wine;*/
 }
 
 a:hover {

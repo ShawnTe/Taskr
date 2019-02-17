@@ -1,3 +1,8 @@
 <h1>Edit <%= @task.title.downcase %></h1>
 
 <%= render 'form' %>
+<div class="bottom-section">
+  <div>
+    <%= link_to image_tag("trash-wine.svg", :alt =>  "trash-icon", :height => 30, :class => "img-responsive"), task_path, method: :delete %>
+  </div>
+</div>

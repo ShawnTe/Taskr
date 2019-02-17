@@ -27,9 +27,6 @@ class UsersController < Clearance::UsersController
     end
   end
 
-
-
-
   def show
     @user = current_user
   end
