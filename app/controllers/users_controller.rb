@@ -1,34 +1,4 @@
 class UsersController < Clearance::UsersController
-  before_action :require_login
-
-  # def new
-  #   @user = user_from_params
-  #   p flash[:alert]
-  #   if flash[:alert]
-  #     flash.now[:alert]
-  #   end
-  #   render 'sessions/new'
-  # end
-
-  def new
-    @user = user_from_params
-    render template: "users/new"
-  end
-
-  def create
-    @user = user_from_params
-
-    if @user.save
-      sign_in @user
-      redirect_back_or url_after_create
-    else
-      # flash[:messages] = @user.errors.messages
-      render template: "users/new"
-    end
-  end
-
-
-
 
   def show
     @user = current_user
