@@ -1,0 +1,18 @@
+<% details.each do |detail| %>
+  <% cache detail do %>
+    <% if detail.todo.instance_of? SupplyDetail %>
+
+      <li>Get supplies: <%= link_to detail.todo.name, detail_path(detail.id) %></li>
+
+    <% else detail.todo.instance_of? ContactDetail %>
+
+      <% if detail.todo.company.blank? %>
+        <% display_name = detail.todo.name %>
+      <% else %>
+        <% display_name = detail.todo.company %>
+      <% end %>
+
+      <li>Make appointment: <%= link_to display_name, detail_path(detail.id)%> </li>
+    <% end %>
+  <% end %>
+<% end %>

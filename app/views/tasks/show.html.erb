@@ -35,21 +35,13 @@
 
 <div class="align-section">
   <h2 class="inline">Supplies & Contacts...</h2>
+
   <%= link_to image_tag("add-wine.svg", :alt =>  "add-icon", :height => 30, :class => "img-responsive"), new_detail_path(:task_id => @task.id), class: "inline" %>
+
   <ul class="indent-list">
-      <% @task.details.each do |detail| %>
-        <% if detail.todo.instance_of? SupplyDetail %>
-          <li>Get supplies: <%= link_to detail.todo.name, detail_path(detail.id) %></li>
-        <% elsif detail.todo.instance_of? ContactDetail %>
-          <% if detail.todo.company.blank? %>
-            <% display_name = detail.todo.name %>
-          <% else %>
-            <% display_name = detail.todo.company %>
-          <% end %>
-          <li>Make appointment: <%= link_to display_name, detail_path(detail.id)%> </li>
-        <% else %>
-        <% end %>
-    <% end %>
+
+    <%= render partial: "details/details", :locals => { :details => @task.details } %>
+
   </ul>
 </div>
 
