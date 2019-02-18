@@ -4,7 +4,7 @@
   <%= alert %><br />
 <% end %>
 
-<%= link_to '<i class="the-icons icon-plus-squared-alt"></i>'.html_safe, new_task_path %>
+<%= link_to image_tag("add-wine.svg", :alt =>  "add-icon", :height => 30, :class => "img-responsive"), new_task_path %>
 
 <div>
     <% if @tasks.count >= 1 %>
