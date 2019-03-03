@@ -6,7 +6,7 @@
 
     <div>
         <%= todo_form.label "Company" %>
-        <%= todo_form.text_field :company, placeholder: @detail.todo.try(:company), value: @detail.todo.try(:company), required: false %>
+        <%= todo_form.text_field :company, options = { placeholder: @detail.todo.try(:company), value: @detail.todo.try(:company), required: false, autofocus: true } %>
     </div>
     <div>
         <%= todo_form.label "Name" %>

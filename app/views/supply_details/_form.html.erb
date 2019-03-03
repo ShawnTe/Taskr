@@ -5,7 +5,7 @@
 
     <div>
     <%= todo_form.label "Thing to get" %>
-    <%= todo_form.text_field :name, label: "Thing to get", placeholder: @detail.todo.try(:name), value: @detail.todo.try(:name) %></div>
+    <%= todo_form.text_field :name, options = { label: "Thing to get", placeholder: @detail.todo.try(:name), value: @detail.todo.try(:name), autofocus: true } %></div>
 
     <div>
     <%= todo_form.label "How many" %>

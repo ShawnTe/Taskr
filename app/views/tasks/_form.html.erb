@@ -1,6 +1,6 @@
 <%= form_for @task, html: {class: "new-form"} do |f| %>
   <%= f.label :title %>
-  <%= f.text_field :title, placeholder: @task.try(:title), value: @task.try(:title) %>
+  <%= f.text_field :title, options = { placeholder: @task.try(:title), value: @task.try(:title), autofocus: true } %>
   <br />
 
   <%= f.label :next_due_date %>
