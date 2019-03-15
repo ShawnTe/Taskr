@@ -9,7 +9,7 @@
 <div>
     <% if @tasks.count >= 1 %>
       <ul>
-        <%= render partial: 'tasks/tasks', collection: @tasks, cached: true %>
+        <%= render partial: 'tasks/tasks', locals: {tasks: @tasks} %>
       </ul>
     <% else %>
       <br />Click <i class="icon-plus-squared-alt demo-icon"></i> above to add a task.
