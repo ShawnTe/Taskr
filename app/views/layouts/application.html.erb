@@ -26,8 +26,6 @@
 
       <% if signed_in? %>
         Hi <%= current_user.username %>!
-      <% else %>
-        <%= link_to 'Sign in', sign_in_path %>
       <% end %>
 
       <div id="flash">
